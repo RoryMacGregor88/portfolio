@@ -8,7 +8,7 @@ interface Props {
 const Button = ({ label, className = '' }: Props) => (
   <button
     className={clsx(
-      'border-solid rounded-md bg-yellow p-5 text-black w-full font-bold',
+      'border-solid rounded-md bg-yellow p-2 text-black w-full font-bold',
       className
     )}
   >
