@@ -3,6 +3,8 @@ import { ReactNode } from 'react';
 import './globals.css';
 import { Open_Sans } from 'next/font/google';
 
+import { Sidebar } from '~/components';
+
 const openSans = Open_Sans({ subsets: ['latin'] });
 
 export const metadata = {
@@ -13,7 +15,10 @@ export const metadata = {
 
 const RootLayout = ({ children }: { children: ReactNode }) => (
   <html lang='en'>
-    <body className={openSans.className}>{children}</body>
+    <body className={openSans.className}>
+      <Sidebar />
+      {children}
+    </body>
   </html>
 );
 
