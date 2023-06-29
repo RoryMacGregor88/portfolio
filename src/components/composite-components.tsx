@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { ReactNode } from 'react';
 
 interface SectionWrapperProps {
@@ -26,8 +27,13 @@ export const ContentArea = ({ children }: { children: ReactNode }) => (
   </div>
 );
 
-export const Title = ({ children }: { children: ReactNode }) => (
-  <h2 className='text-4xl lg:text-4xl font-bold'>{children}</h2>
+interface TitleProps {
+  children: ReactNode;
+  className?: string;
+}
+
+export const Title = ({ children, className }: TitleProps) => (
+  <h2 className={clsx('text-4xl font-bold', className)}>{children}</h2>
 );
 
 /** paragraphs in between title and buttons */

@@ -1,10 +1,11 @@
 import { StaticImageData } from 'next/image';
-import ChardDashboardImage from '~/images/chart-dashboard.png';
+import ChardDashboard1 from '~/images/chart-dashboard.png';
+import ChardDashboard2 from '~/images/chart-dashboard-2.png';
 
 export type Project = {
   name: string;
   descriptions: string[];
-  src: StaticImageData;
+  images: { src: StaticImageData; alt: string }[];
   technologies: string[];
   responsive?: boolean;
   buttonMetadata: { label: string; href: string }[];
@@ -20,7 +21,16 @@ export const PROJECT_DATA: Project[] = [
       'The biggest challenge in this featue was the data transforming. The data we received from the client was in a fixed data shape, required that data to be tranformed to fit the data shape demanded by the charting library API. This led to the creation of many complex transformer functions.',
     ],
     responsive: false,
-    src: ChardDashboardImage,
+    images: [
+      {
+        src: ChardDashboard1,
+        alt: 'chart-dashboard-1',
+      },
+      {
+        src: ChardDashboard2,
+        alt: 'chart-dashboard-2',
+      },
+    ],
     technologies: [
       'React',
       'TypeScript',
@@ -47,7 +57,16 @@ export const PROJECT_DATA: Project[] = [
       `This is a long-lived training project that I've maintained for several years. It was initially created as a playground to learn more about the technogies used as Astrosat, but quickly grew into a fully-realised production app.`,
       'It has since been deployed to production and testing environments, has full authentication, authorization, server-side sessions, client-side cookies, Stripe payment processing and much more.',
     ],
-    src: ChardDashboardImage,
+    images: [
+      {
+        src: ChardDashboard1,
+        alt: 'chart-dashboard-1',
+      },
+      {
+        src: ChardDashboard2,
+        alt: 'chart-dashboard-2',
+      },
+    ],
     technologies: [
       'Next.js',
       'React',
@@ -73,7 +92,16 @@ export const PROJECT_DATA: Project[] = [
     name: '3. React-Query Auth App',
     descriptions: [],
     responsive: true,
-    src: ChardDashboardImage,
+    images: [
+      {
+        src: ChardDashboard1,
+        alt: 'chart-dashboard-1',
+      },
+      {
+        src: ChardDashboard2,
+        alt: 'chart-dashboard-2',
+      },
+    ],
     technologies: [],
     buttonMetadata: [
       {
@@ -90,7 +118,16 @@ export const PROJECT_DATA: Project[] = [
     name: '4. Deck GL Mapping App',
     descriptions: [],
     responsive: false,
-    src: ChardDashboardImage,
+    images: [
+      {
+        src: ChardDashboard1,
+        alt: 'chart-dashboard-1',
+      },
+      {
+        src: ChardDashboard2,
+        alt: 'chart-dashboard-2',
+      },
+    ],
     technologies: [],
     buttonMetadata: [
       {
@@ -106,12 +143,28 @@ export const PROJECT_DATA: Project[] = [
   {
     name: '5. This site!',
     descriptions: [
-      `Yes, everything about this portfolio app was created manually using Next.js 13, Typescript and Tailwind CSS.`,
+      `Yes, everything about this portfolio app was created manually using Next.js 13, Typescript, Tailwind CSS, React Hook Form and Yup.`,
       `I'm relatively new to Tailwind, so I thought this would serve as an opportunity to have a proper investigation. It's fully responsive too, so feel free to have a play around.`,
     ],
     responsive: true,
-    technologies: ['Next.js 13', 'React', 'Typescript', 'Tailwind CSS'],
-    src: ChardDashboardImage,
+    technologies: [
+      'Next.js 13',
+      'React',
+      'Typescript',
+      'Tailwind CSS',
+      'React Hook Form',
+      'Yup',
+    ],
+    images: [
+      {
+        src: ChardDashboard1,
+        alt: 'chart-dashboard-1',
+      },
+      {
+        src: ChardDashboard2,
+        alt: 'chart-dashboard-2',
+      },
+    ],
     buttonMetadata: [
       {
         label: 'Deployment',

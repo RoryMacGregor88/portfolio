@@ -19,7 +19,7 @@ export const ABOUT_DATA: AboutData = [
   {
     title: 'Non-Work Coding.',
     descriptions: [
-      `Outside of work, my main interest is actually software. I'm always working on some project, or have 10 MDN tabs open at any given time! I also enjoy a physical book, so over tha last few years, I've cultivated a decent library of books on the subjects of everything from OOP design patterns to UX design philosophy. I consider myself very fortunate to have the opportunity to work in a field that interests me so much.`,
+      `Outside of work, my main interest is actually software. I'm always working on some project, or have 10 MDN tabs open at any given time! I also enjoy a physical book, so over the last few years, I've cultivated a decent library of books on the subjects of everything from OOP design patterns to UX design philosophy. I consider myself very fortunate to have the opportunity to work in a field that interests me so much.`,
     ],
   },
   {

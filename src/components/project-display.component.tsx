@@ -18,7 +18,7 @@ import FaceImage from '~/images/face-cropped.jpg';
 const IntroSection = () => (
   <SectionWrapper isEven={true}>
     <ContentArea>
-      <Title>Hi, I&apos;m Rory.</Title>
+      <Title className='text-5xl lg:text-6xl'>Hi, I&apos;m Rory.</Title>
       <DescriptionSection>
         <p>
           I&apos;m a 34-year-old full-stack JavaScript developer based in
@@ -83,11 +83,12 @@ interface ProjectSectionProps {
   index: number;
 }
 
+/** black/yellow panels for project images and descriptions */
 const ProjectSection = ({
   project: {
     descriptions,
     responsive,
-    src,
+    images,
     technologies,
     name,
     buttonMetadata,
@@ -130,13 +131,20 @@ const ProjectSection = ({
       </ContentArea>
 
       <DisplayArea>
-        <div className='border-8 border-solid border-white rounded-md overflow-hidden mx-8 lg:mx-16 my-8 lg:my-0'>
-          <NextImage
-            alt={name}
-            src={src}
-            style={{ objectFit: 'fill' }}
-            placeholder='blur'
-          />
+        <div className='flex flex-col gap-2 justify-evenly h-full'>
+          {images.map(({ src, alt }) => (
+            <div
+              key={alt}
+              className='border-8 border-solid border-white rounded-md overflow-hidden mx-8 lg:mx-16 my-8 lg:my-0'
+            >
+              <NextImage
+                alt={name}
+                src={src}
+                style={{ objectFit: 'fill' }}
+                placeholder='blur'
+              />
+            </div>
+          ))}
         </div>
       </DisplayArea>
     </SectionWrapper>
