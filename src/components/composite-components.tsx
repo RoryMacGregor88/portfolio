@@ -42,7 +42,7 @@ export const DescriptionSection = ({ children }: { children: ReactNode }) => (
 );
 
 export const ButtonSection = ({ children }: { children: ReactNode }) => (
-  <div className='flex gap-4 justify-between'>{children}</div>
+  <div className='flex gap-4 lg:gap-8 justify-between'>{children}</div>
 );
 
 /** yellow panel with images */

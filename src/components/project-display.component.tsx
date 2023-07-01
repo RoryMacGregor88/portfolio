@@ -21,7 +21,7 @@ const IntroSection = () => (
       <Title className='text-5xl lg:text-6xl'>Hi, I&apos;m Rory.</Title>
       <DescriptionSection>
         <p>
-          I&apos;m a 34-year-old full-stack JavaScript developer based in
+          I&apos;m a 34-year-old full-stack TypeScript developer based in
           Edinburgh, Scotland. I&apos;ve been involved in software development
           for 6 years and working professionally for the last 4 years at an
           aerospace firm in Edinburgh called Astrosat, which specialised in
@@ -108,7 +108,7 @@ const ProjectSection = ({
         </DescriptionSection>
 
         <h4 className='text-3xl'>Technologies used:</h4>
-        <ol className='flex flex-col max-h-32 flex-wrap gap-2 list-disc'>
+        <ol className='flex flex-col max-h-32 flex-wrap gap-2'>
           {technologies.map((tech) => (
             <li className='text-xl text-left text-yellow' key={tech}>
               {tech}
