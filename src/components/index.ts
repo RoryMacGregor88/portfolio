@@ -1,6 +1,6 @@
 import Sidebar from './sidebar.component';
 import ProjectDisplay from './project-display.component';
-import Button from './button.component';
+import Button from './button/button.component';
 import ExternalLink from './external-link.component';
 import ContactForm from './contact-form/contact-form.component';
 
