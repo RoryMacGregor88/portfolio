@@ -107,20 +107,18 @@ const ProjectSection = ({
           ))}
         </DescriptionSection>
 
-        <div className=''>
-          <h4 className='text-3xl'>Technologies used:</h4>
-          <ol className='flex flex-wrap list-disc'>
-            {technologies.map((tech) => (
-              <li className='text-xl text-left text-yellow ml-28' key={tech}>
-                {tech}
-              </li>
-            ))}
-          </ol>
-        </div>
+        <h4 className='text-3xl'>Technologies used:</h4>
+        <ol className='flex flex-col max-h-32 flex-wrap gap-2 list-disc'>
+          {technologies.map((tech) => (
+            <li className='text-xl text-left text-yellow' key={tech}>
+              {tech}
+            </li>
+          ))}
+        </ol>
 
         <>
           <h4 className='text-xl lg:text-3xl'>
-            Screen size: {responsive ? 'Responsive' : 'Desktop'}
+            Screen size: {responsive ? 'RESPONSIVE' : 'DESKTOP'}
           </h4>
           <ButtonSection>
             {buttonMetadata.map(({ label, href }) => (

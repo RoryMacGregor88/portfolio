@@ -43,7 +43,7 @@ const Contact = () => {
 
         <div className='flex flex-col gap-4 items-center'>
           <ExternalLink
-            label='View LinkedIn'
+            label='Go To LinkedIn'
             href='https://www.linkedin.com/in/rory-macgregor-8910aa27a/'
           />
           <Button

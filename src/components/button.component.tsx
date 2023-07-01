@@ -25,7 +25,9 @@ const Button = ({
     disabled={disabled}
     className={clsx(
       `border-solid rounded-md bg-yellow p-2 text-black text-sm lg:text-lg w-full font-bold ${
-        !disableHover && !disabled ? 'hover:bg-white' : ''
+        !disableHover && !disabled
+          ? 'hover:bg-white transform active:scale-x-75 transition-transform'
+          : ''
       } ${disabled ? 'cursor-not-allowed' : ''}`,
       className
     )}
