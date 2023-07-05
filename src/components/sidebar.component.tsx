@@ -17,7 +17,7 @@ const BUTTON_METADATA = [
 ];
 
 const Sidebar = () => (
-  <div className='bg-yellow lg:fixed lg:h-screen lg:w-12 h-12 w-screen flex flex-row lg:flex-col justify-evenly'>
+  <div className='bg-yellow fixed h-12 lg:h-screen w-screen lg:w-32 flex flex-row lg:flex-col justify-evenly'>
     {BUTTON_METADATA.map(({ label, href }) => (
       <NextLink key={label} href={href} style={{ alignSelf: 'center' }}>
         <Button

@@ -14,7 +14,7 @@ export const SectionWrapper = ({
   <li
     className={`flex flex-col ${
       isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
-    } justify-between align-middle lg:pl-12`}
+    } justify-between align-middle lg:pl-32`}
   >
     {children}
   </li>
@@ -38,7 +38,9 @@ export const Title = ({ children, className }: TitleProps) => (
 
 /** paragraphs in between title and buttons */
 export const DescriptionSection = ({ children }: { children: ReactNode }) => (
-  <div className='text-lg lg:text-2xl flex flex-col gap-2'>{children}</div>
+  <div className='text-lg lg:text-2xl flex flex-col text-left gap-4'>
+    {children}
+  </div>
 );
 
 export const ButtonSection = ({ children }: { children: ReactNode }) => (

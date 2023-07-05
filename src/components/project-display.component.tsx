@@ -18,7 +18,9 @@ import FaceImage from '~/images/face-cropped.jpg';
 const IntroSection = () => (
   <SectionWrapper isEven={true}>
     <ContentArea>
-      <Title className='text-5xl lg:text-6xl'>Hi, I&apos;m Rory.</Title>
+      <Title className='text-5xl lg:text-6xl text-left'>
+        Hi, I&apos;m Rory.
+      </Title>
       <DescriptionSection>
         <p>
           I&apos;m a 34-year-old full-stack TypeScript developer based in

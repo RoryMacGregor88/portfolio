@@ -13,11 +13,14 @@ const contactFormSchema = Yup.object().shape({
   message: Yup.string().required('Message is required'),
 });
 
-const ErrorMessage = ({ errorMessage }: { errorMessage: string }) => (
-  <p className='text-red mt-1'>{errorMessage}</p>
-);
+const ErrorMessage = ({
+  errorMessage,
+}: {
+  errorMessage: string | undefined;
+}) => <p className='text-red mh-4 absolute top-2 left-0'>{errorMessage}</p>;
 
-const sharedInputStyles = 'rounded-md p-4 text-black w-full focus:outline-none';
+const sharedInputStyles =
+  'rounded-md p-4 text-black w-full focus:outline-none relative';
 
 export type FormValues = {
   title: string;
@@ -56,9 +59,7 @@ const ContactForm = ({ onSubmit, disableSubmit }: Props) => {
           className={sharedInputStyles}
           placeholder='Title'
         />
-        {errors.title?.message ? (
-          <ErrorMessage errorMessage={errors.title.message} />
-        ) : null}
+        <ErrorMessage errorMessage={errors.title?.message} />
       </div>
 
       <div className='w-full'>
@@ -68,9 +69,7 @@ const ContactForm = ({ onSubmit, disableSubmit }: Props) => {
           rows={10}
           placeholder='Message'
         />
-        {errors.message?.message ? (
-          <ErrorMessage errorMessage={errors.message.message} />
-        ) : null}
+        <ErrorMessage errorMessage={errors.message?.message} />
       </div>
 
       <Button type='submit' label='Submit' disabled={isDisabled} />
