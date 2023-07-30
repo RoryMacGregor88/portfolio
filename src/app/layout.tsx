@@ -1,3 +1,5 @@
+import { Metadata } from 'next';
+
 import { ReactNode } from 'react';
 
 import './globals.css';
@@ -7,10 +9,9 @@ import { Sidebar } from '~/components';
 
 const openSans = Open_Sans({ subsets: ['latin'] });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Rory MacGregor | Full-Stack Software Developer',
-  description:
-    'A portfolio for the full-stack software developer Rory MacGregor.',
+  description: 'A portfolio for full-stack software developer Rory MacGregor.',
 };
 
 const RootLayout = ({ children }: { children: ReactNode }) => (

@@ -3,6 +3,7 @@ import ProjectDisplay from './project-display.component';
 import Button from './button/button.component';
 import ExternalLink from './external-link.component';
 import ContactForm from './contact-form/contact-form.component';
+import TechIconList from './tech-icon-list.component';
 
 /** shared styled components used to compose sections */
 export {
@@ -14,4 +15,11 @@ export {
   DisplayArea,
 } from './composite-components';
 
-export { Sidebar, ProjectDisplay, Button, ExternalLink, ContactForm };
+export {
+  Sidebar,
+  ProjectDisplay,
+  Button,
+  ExternalLink,
+  ContactForm,
+  TechIconList,
+};

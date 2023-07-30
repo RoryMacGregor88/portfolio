@@ -1,3 +1,5 @@
+'use client';
+
 import NextImage from 'next/image';
 
 import {
@@ -13,14 +15,45 @@ import {
 import { PROJECT_DATA, Project } from '~/project-data';
 
 import FaceImage from '~/images/face-cropped.jpg';
+import { TechIconList } from '~/components';
+
+const ProfilePicture = () => (
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '0 2.5rem',
+    }}
+  >
+    <div
+      style={{
+        border: '4px solid #fff',
+        borderRadius: '50%',
+        maxHeight: '30em',
+        maxWidth: '30em',
+        overflow: 'hidden',
+        objectFit: 'contain',
+      }}
+    >
+      <NextImage
+        alt={`Rory MacGregor headshot`}
+        src={FaceImage}
+        style={{ objectFit: 'fill' }}
+        placeholder='blur'
+      />
+    </div>
+  </div>
+);
 
 /** first black/yellow panel that is unique from the others */
 const IntroSection = () => (
   <SectionWrapper isEven={true}>
     <ContentArea>
-      <Title className='text-5xl lg:text-6xl text-left'>
+      <Title className='text-2xl lg:text-4xl text-center lg:text-left'>
         Hi, I&apos;m Rory.
       </Title>
+
       <DescriptionSection>
         <p>
           I&apos;m a 34-year-old full-stack TypeScript developer based in
@@ -30,10 +63,24 @@ const IntroSection = () => (
           visualising satellite data on maps and creating custom tools with
           which to interact with it.
         </p>
+      </DescriptionSection>
+
+      <div>
+        <h3 className='text-lg lg:text-xl text-center mb-4'>
+          Principal technologies:
+        </h3>
+        <TechIconList showAll />
+      </div>
+
+      <DescriptionSection>
         <p>
           Scrolling down this page, you will find short descriptions of projects
           that demonstrate my knowledge and experience, as well as links to
           standalone deploys and repositories for each.
+        </p>
+        <p>
+          Please keep in mind that all projects shown here are currently under
+          development.
         </p>
       </DescriptionSection>
 
@@ -50,32 +97,7 @@ const IntroSection = () => (
     </ContentArea>
 
     <DisplayArea>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '2.5rem',
-        }}
-      >
-        <div
-          style={{
-            border: '8px solid #fff',
-            borderRadius: '50%',
-            maxHeight: '30em',
-            maxWidth: '30em',
-            overflow: 'hidden',
-            objectFit: 'contain',
-          }}
-        >
-          <NextImage
-            alt={`Rory MacGregor headshot`}
-            src={FaceImage}
-            style={{ objectFit: 'fill' }}
-            placeholder='blur'
-          />
-        </div>
-      </div>
+      <ProfilePicture />
     </DisplayArea>
   </SectionWrapper>
 );
@@ -89,7 +111,7 @@ interface ProjectSectionProps {
 const ProjectSection = ({
   project: {
     descriptions,
-    responsive,
+    isResponsive,
     images,
     technologies,
     name,
@@ -103,39 +125,31 @@ const ProjectSection = ({
       <ContentArea>
         <Title>{name}</Title>
 
+        <h4 className='text-xl'>
+          Screen size: {isResponsive ? 'responsive' : 'desktop only'}
+        </h4>
+
         <DescriptionSection>
           {descriptions.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
         </DescriptionSection>
 
-        <h4 className='text-3xl'>Technologies used:</h4>
-        <ol className='flex flex-col max-h-32 flex-wrap gap-2'>
-          {technologies.map((tech) => (
-            <li className='text-xl text-left text-yellow' key={tech}>
-              {tech}
-            </li>
-          ))}
-        </ol>
+        <TechIconList technologies={technologies} />
 
-        <>
-          <h4 className='text-xl lg:text-3xl'>
-            Screen size: {responsive ? 'RESPONSIVE' : 'DESKTOP'}
-          </h4>
-          <ButtonSection>
-            {buttonMetadata.map(({ label, href }) => (
-              <ExternalLink key={label} href={href} label={label} />
-            ))}
-          </ButtonSection>
-        </>
+        <ButtonSection>
+          {buttonMetadata.map(({ label, href }) => (
+            <ExternalLink key={label} href={href} label={label} />
+          ))}
+        </ButtonSection>
       </ContentArea>
 
       <DisplayArea>
-        <div className='flex flex-col gap-2 justify-evenly h-full'>
+        <div className='flex flex-col gap-2 justify-evenly h-full my-2'>
           {images.map(({ src, alt }) => (
             <div
               key={alt}
-              className='border-8 border-solid border-white rounded-md overflow-hidden mx-8 lg:mx-16 my-8 lg:my-0'
+              className='border-4 border-solid border-white rounded-md overflow-hidden mx-8 lg:mx-16 my-8 lg:my-0'
             >
               <NextImage
                 alt={name}

@@ -5,7 +5,6 @@ interface SectionWrapperProps {
   isEven?: boolean;
   children: ReactNode;
 }
-
 /** container comprising black text and yellow image sections */
 export const SectionWrapper = ({
   isEven = false,
@@ -14,7 +13,7 @@ export const SectionWrapper = ({
   <li
     className={`flex flex-col ${
       isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
-    } justify-between align-middle lg:pl-32`}
+    } justify-between align-middle pl-0 pt-12 lg:pl-32 lg:pt-0`}
   >
     {children}
   </li>
@@ -33,12 +32,14 @@ interface TitleProps {
 }
 
 export const Title = ({ children, className }: TitleProps) => (
-  <h2 className={clsx('text-4xl font-bold', className)}>{children}</h2>
+  <h2 className={clsx('text-xl lg:text-2xl font-bold', className)}>
+    {children}
+  </h2>
 );
 
 /** paragraphs in between title and buttons */
 export const DescriptionSection = ({ children }: { children: ReactNode }) => (
-  <div className='text-lg lg:text-2xl flex flex-col text-left gap-4'>
+  <div className='text-lg lg:text-xl flex flex-col text-center lg:text-left gap-4'>
     {children}
   </div>
 );
