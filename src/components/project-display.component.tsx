@@ -58,14 +58,16 @@ const IntroSection = () => (
         <p>
           I&apos;m a 34-year-old full-stack TypeScript developer based in
           Edinburgh, Scotland. I&apos;ve been involved in software development
-          for 6 years and working professionally for the last 4 years at an
-          aerospace firm in Edinburgh called Astrosat, which specialised in
-          visualising satellite data on maps and creating custom tools with
-          which to interact with it.
+          for 6 years and have worked professionally for the last 4 years at an
+          aerospace firm in Edinburgh called Astrosat.
+        </p>
+        <p>
+          Astrosat specialises in visualising satellite data on maps and
+          creating custom tools with which to interact with it.
         </p>
       </DescriptionSection>
 
-      <div>
+      <div className='flex flex-col items-center'>
         <h3 className='text-lg lg:text-xl text-center mb-4'>
           Principal technologies:
         </h3>
@@ -80,7 +82,7 @@ const IntroSection = () => (
         </p>
         <p>
           Please keep in mind that all projects shown here are currently under
-          development.
+          development, and not reflective of finished applications.
         </p>
       </DescriptionSection>
 

@@ -1,4 +1,3 @@
-import { ReactElement } from 'react';
 import ReactIcon from './react-icon.svg';
 import TypescriptIcon from './typescript-icon.svg';
 import VictoryIcon from './victory-icon.svg';
@@ -11,8 +10,9 @@ import NextIcon from './next-icon.svg';
 import TailwindIcon from './tailwind-icon.svg';
 import StripeIcon from './stripe-icon.svg';
 import ReactHookFormIcon from './react-hook-form-icon.svg';
+import { ReactNode } from 'react';
 
-type IconsList = { name: string; Icon: ReactElement }[];
+type IconsList = { name: string; Icon: () => ReactNode }[];
 
 const allIcons: IconsList = [
   { name: 'React', Icon: ReactIcon },
