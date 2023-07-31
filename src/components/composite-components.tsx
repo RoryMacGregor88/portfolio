@@ -50,7 +50,7 @@ export const ButtonSection = ({ children }: { children: ReactNode }) => (
 
 /** yellow panel with images */
 export const DisplayArea = ({ children }: { children: ReactNode }) => (
-  <div className='bg-yellow min-h-screen lg:w-1/2 flex flex-col justify-center'>
+  <div className='bg-yellow min-h-screen lg:w-1/2 flex flex-col justify-evenly'>
     {children}
   </div>
 );

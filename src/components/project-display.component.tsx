@@ -65,16 +65,6 @@ const IntroSection = () => (
           Astrosat specialises in visualising satellite data on maps and
           creating custom tools with which to interact with it.
         </p>
-      </DescriptionSection>
-
-      <div className='flex flex-col items-center'>
-        <h3 className='text-lg lg:text-xl text-center mb-4'>
-          Principal technologies:
-        </h3>
-        <TechIconList showAll />
-      </div>
-
-      <DescriptionSection>
         <p>
           Scrolling down this page, you will find short descriptions of projects
           that demonstrate my knowledge and experience, as well as links to
@@ -100,6 +90,7 @@ const IntroSection = () => (
 
     <DisplayArea>
       <ProfilePicture />
+      <TechIconList title='Principle technologies: ' showAll />
     </DisplayArea>
   </SectionWrapper>
 );

@@ -19,7 +19,7 @@ const Contact = () => {
   const [error, setError] = useState<string | null>(null);
 
   const onSubmit = async (formValues: FormValues) => {
-    const res = await fetch('/contact', {
+    const res = await fetch('/api/contact', {
       method: 'POST',
       body: JSON.stringify(formValues),
     });
