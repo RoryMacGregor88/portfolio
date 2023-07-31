@@ -9,7 +9,10 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Button } from '~/components';
 
 const contactFormSchema = Yup.object().shape({
-  title: Yup.string().required('Title is required'),
+  email: Yup.string()
+    .email('Contact email must be valid email')
+    .required('Contact email is required'),
+  subject: Yup.string().required('Subject is required'),
   message: Yup.string().required('Message is required'),
 });
 
@@ -17,13 +20,13 @@ const ErrorMessage = ({
   errorMessage,
 }: {
   errorMessage: string | undefined;
-}) => <p className='text-red mh-4 absolute top-2 left-0'>{errorMessage}</p>;
+}) => <p className='text-red h-4'>{errorMessage}</p>;
 
-const sharedInputStyles =
-  'rounded-md p-4 text-black w-full focus:outline-none relative';
+const sharedInputStyles = 'rounded-md p-4 text-black w-full focus:outline-none';
 
 export type FormValues = {
-  title: string;
+  email: string;
+  subject: string;
   message: string;
 };
 
@@ -41,7 +44,8 @@ const ContactForm = ({ onSubmit, disableSubmit }: Props) => {
     mode: 'all',
     resolver: yupResolver(contactFormSchema),
     defaultValues: {
-      title: '',
+      email: '',
+      subject: '',
       message: '',
     },
   });
@@ -50,16 +54,25 @@ const ContactForm = ({ onSubmit, disableSubmit }: Props) => {
 
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
-      className='flex flex-col gap-8 p-4 lg:p-8 bg-black mx-4 lg:mx-8 rounded-md'
+      onSubmit={handleSubmit((values) => onSubmit(values))}
+      className='flex flex-col gap-4 p-4 lg:p-8 bg-black mx-4 lg:mx-8 rounded-md'
     >
       <div>
         <input
-          {...register('title')}
+          {...register('email')}
           className={sharedInputStyles}
-          placeholder='Title'
+          placeholder='Contact email address'
         />
-        <ErrorMessage errorMessage={errors.title?.message} />
+        <ErrorMessage errorMessage={errors.email?.message} />
+      </div>
+
+      <div>
+        <input
+          {...register('subject')}
+          className={sharedInputStyles}
+          placeholder='Subject'
+        />
+        <ErrorMessage errorMessage={errors.subject?.message} />
       </div>
 
       <div className='w-full'>

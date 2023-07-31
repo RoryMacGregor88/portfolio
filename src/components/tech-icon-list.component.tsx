@@ -16,24 +16,27 @@ const TechIconList = ({
   title = DEFAULT_TITLE,
   showAll = false,
 }: Props) => {
-  const selectedIcons = showAll ? allIcons : getSelectedIcons(technologies);
+  const selectedIcons = showAll ? allIcons : getSelectedIcons(technologies),
+    isIntro = title !== DEFAULT_TITLE;
   return (
-    <div className='flex flex-col items-center'>
-      <h3
-        className={`text-${
-          title !== DEFAULT_TITLE ? 'black' : 'white'
-        } text-lg lg:text-xl text-center my-4`}
+    <div className='flex justify-center'>
+      <div
+        className={`flex flex-col items-center p-4 rounded-md bg-${
+          isIntro ? 'black' : ''
+        }`}
       >
-        {title}
-      </h3>
-      <ul className='flex flex-row flex-wrap justify-center gap-4 max-w-xl'>
-        {selectedIcons.map(({ name, Icon }) => (
-          <li key={name} className='w-16 h-16'>
-            <Icon />
-            {/* <p className='text-lg font-bold'>{selectedTech}</p> */}
-          </li>
-        ))}
-      </ul>
+        <h3 className='text-white text-lg lg:text-xl text-center mb-4'>
+          {title}
+        </h3>
+        <ul className='flex flex-row flex-wrap justify-center gap-4 max-w-xl'>
+          {selectedIcons.map(({ name, Icon }) => (
+            <li key={name} className='w-16 h-16'>
+              <Icon />
+              {/* <p className='text-white text-lg font-bold'>{name}</p> */}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

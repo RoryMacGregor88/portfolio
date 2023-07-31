@@ -76,6 +76,8 @@ const IntroSection = () => (
         </p>
       </DescriptionSection>
 
+      <TechIconList title='Principle technologies: ' showAll />
+
       <ButtonSection>
         <ExternalLink
           href='https://www.linkedin.com/in/rory-macgregor-8910aa27a'
@@ -90,7 +92,6 @@ const IntroSection = () => (
 
     <DisplayArea>
       <ProfilePicture />
-      <TechIconList title='Principle technologies: ' showAll />
     </DisplayArea>
   </SectionWrapper>
 );

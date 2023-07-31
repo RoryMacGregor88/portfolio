@@ -16,7 +16,7 @@ import {
 import { FormValues } from '~/components/contact-form/contact-form.component';
 
 const Contact = () => {
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<{ message: string } | null>(null);
 
   const onSubmit = async (formValues: FormValues) => {
     const res = await fetch('/api/contact', {
@@ -26,7 +26,7 @@ const Contact = () => {
 
     if (!res.ok) {
       const error = (await res.json()) as { message: string };
-      setError(error.message);
+      setError(error);
     }
   };
 
@@ -34,11 +34,12 @@ const Contact = () => {
     <SectionWrapper isEven={true}>
       <ContentArea>
         <Title>Contact Me.</Title>
-        <DescriptionSection>
+        <DescriptionSection className='lg:text-center'>
           <p>
             You can contact me via LinkedIn or email, or from right here in the
-            contact form. I look forward to hearing from you.
+            contact form.
           </p>
+          <p>I look forward to hearing from you.</p>
         </DescriptionSection>
 
         <div className='flex flex-col gap-4 lg:gap-8 items-center'>
@@ -49,7 +50,7 @@ const Contact = () => {
           <Button
             label='Copy Email to Clipboard'
             onClick={() =>
-              navigator.clipboard.writeText('RoryMacGregor88@outlook.com')
+              navigator.clipboard.writeText('rorymacgregordev@outlook.com')
             }
           />
         </div>
@@ -58,8 +59,8 @@ const Contact = () => {
       <DisplayArea>
         {!!error ? (
           <div className='flex flex-col gap-4 mx-8 self-center mb-10 bg-red text-black text-2xl items-center rounded-md p-4'>
-            <h3>An unexpected error occurred:</h3>
-            <p>test error message</p>
+            <h3>ERROR:</h3>
+            <p>{error?.message}</p>
           </div>
         ) : null}
         <ContactForm onSubmit={onSubmit} disableSubmit={!!error} />

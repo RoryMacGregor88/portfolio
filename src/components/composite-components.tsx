@@ -38,8 +38,16 @@ export const Title = ({ children, className }: TitleProps) => (
 );
 
 /** paragraphs in between title and buttons */
-export const DescriptionSection = ({ children }: { children: ReactNode }) => (
-  <div className='text-lg lg:text-xl flex flex-col text-center lg:text-left gap-4'>
+export const DescriptionSection = ({
+  children,
+  className = '',
+}: {
+  children: ReactNode;
+  className?: string;
+}) => (
+  <div
+    className={`text-lg lg:text-xl flex flex-col text-center lg:text-left gap-4 ${className}`}
+  >
     {children}
   </div>
 );
