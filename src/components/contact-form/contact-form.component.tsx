@@ -55,7 +55,7 @@ const ContactForm = ({ onSubmit, disableSubmit }: Props) => {
   return (
     <form
       onSubmit={handleSubmit((values) => onSubmit(values))}
-      className='flex flex-col gap-4 p-4 lg:p-8 bg-black mx-4 lg:mx-8 rounded-md'
+      className='flex flex-col w-full gap-4 p-4 lg:p-8 bg-black mx-4 lg:mx-8 rounded-md'
     >
       <div>
         <input

@@ -170,7 +170,7 @@ export const PROJECT_DATA: Project[] = [
     descriptions: [
       `This portfolio app was created completely manually using Next.js 13, TypeScript, Tailwind CSS, React Hook Form and Yup.`,
       `I put it together fairly quickly for the purposes of hosting these demo projects, so it is not intended to be anything grand, and I'm relatively new to Tailwind CSS, so it also served as an opportunity to have a proper investigation.`,
-      `It's fully responsive as far down as 200 pixels too, so feel free to have a play around.`,
+      `It's fully responsive as far down as 250 pixels too, so feel free to have a play around.`,
     ],
     isResponsive: true,
     primaryTechnologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],

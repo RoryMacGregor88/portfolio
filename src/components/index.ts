@@ -13,6 +13,7 @@ export {
   DescriptionSection,
   ButtonSection,
   DisplayArea,
+  MultiImageView,
 } from './composite-components';
 
 export {

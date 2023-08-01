@@ -18,7 +18,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => (
   <html lang='en'>
     <body className={openSans.className}>
       <Sidebar />
-      <ul>{children}</ul>
+      <ul className='pt-12 lg:pt-0'>{children}</ul>
     </body>
   </html>
 );

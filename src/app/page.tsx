@@ -2,8 +2,6 @@
 
 import { useState } from 'react';
 
-import NextImage from 'next/image';
-
 import ImageViewer from 'react-simple-image-viewer';
 
 import {
@@ -16,6 +14,7 @@ import {
   DisplayArea,
   TechIconList,
   CircleImage,
+  MultiImageView,
 } from '~/components';
 
 import { PROJECT_DATA, Project } from '~/project-data';
@@ -119,30 +118,16 @@ const ProjectSection = ({
       </ContentArea>
 
       <DisplayArea>
-        <div className='flex flex-wrap flex-row justify-evenly gap-2 m-4'>
-          {images.map(({ src, alt }, i) => (
-            <div
-              key={alt}
-              className='flex w-2/5 border-4 border-solid border-white rounded-md overflow-hidden'
-            >
-              <NextImage
-                alt={name}
-                src={src}
-                style={{ objectFit: 'fill', cursor: 'pointer' }}
-                placeholder='blur'
-                onClick={() => setSelectedImage(i + 1)}
-              />
-            </div>
-          ))}
-        </div>
+        <MultiImageView images={images} setSelectedImage={setSelectedImage} />
       </DisplayArea>
+
       {!!selectedImage ? (
         <ImageViewer
           src={images.map(({ src }) => `${src}`)}
           currentIndex={selectedImage}
           onClose={() => setSelectedImage(null)}
           disableScroll={false}
-          backgroundStyle={{ backgroundColor: 'rgba(0,0,0,0.9)' }}
+          backgroundStyle={{ backgroundColor: 'rgba(0,0,0,0.9)', zIndex: 1000 }}
           closeOnClickOutside={true}
         />
       ) : null}

@@ -1,5 +1,8 @@
-import clsx from 'clsx';
+import NextImage, { StaticImageData } from 'next/image';
+
 import { ReactNode } from 'react';
+
+import clsx from 'clsx';
 
 interface SectionWrapperProps {
   isEven?: boolean;
@@ -13,10 +16,48 @@ export const SectionWrapper = ({
   <li
     className={`flex flex-col ${
       isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
-    } justify-between align-middle pl-0 pt-12 lg:pl-32 lg:pt-0`}
+    } justify-between align-middle pl-0 lg:pl-32 lg:pt-0`}
   >
     {children}
   </li>
+);
+
+/** yellow panel with images */
+export const DisplayArea = ({ children }: { children: ReactNode }) => (
+  <div className='bg-yellow min-h-screen lg:w-1/2 flex justify-center items-center'>
+    {children}
+  </div>
+);
+
+interface MultiImageViewProps {
+  images: { src: StaticImageData; alt: string }[];
+  setSelectedImage: (index: number) => void;
+}
+
+export const MultiImageView = ({
+  images,
+  setSelectedImage,
+}: MultiImageViewProps) => (
+  <div className='flex flex-wrap justify-evenly gap-2 m-4'>
+    {images.map(({ src, alt }, i) => (
+      <div
+        key={alt}
+        className='flex w-80 border-4 border-solid border-white rounded-md overflow-hidden'
+      >
+        <NextImage
+          alt={alt}
+          src={src}
+          style={{
+            objectFit: 'fill',
+            width: 'fit-content',
+            cursor: 'pointer',
+          }}
+          placeholder='blur'
+          onClick={() => setSelectedImage(i + 1)}
+        />
+      </div>
+    ))}
+  </div>
 );
 
 /** black panel with text and buttons */
@@ -54,11 +95,4 @@ export const DescriptionSection = ({
 
 export const ButtonSection = ({ children }: { children: ReactNode }) => (
   <div className='flex gap-4 lg:gap-8 justify-between'>{children}</div>
-);
-
-/** yellow panel with images */
-export const DisplayArea = ({ children }: { children: ReactNode }) => (
-  <div className='bg-yellow min-h-screen lg:w-1/2 flex flex-col justify-evenly'>
-    {children}
-  </div>
 );
