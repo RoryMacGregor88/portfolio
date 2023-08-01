@@ -165,7 +165,7 @@ const ProjectSection = ({
       </DisplayArea>
       {!!selectedImage ? (
         <ImageViewer
-          src={images.map(({ src }) => src)}
+          src={images.map(({ src }) => `${src}`)}
           currentIndex={selectedImage}
           onClose={() => setSelectedImage(null)}
           disableScroll={false}
