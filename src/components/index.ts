@@ -1,9 +1,9 @@
 import Sidebar from './sidebar.component';
-import Landing from './landing.component';
 import Button from './button/button.component';
 import ExternalLink from './external-link.component';
 import ContactForm from './contact-form/contact-form.component';
 import TechIconList from './tech-icon-list.component';
+import CircleImage from './cirlce-image.component';
 
 /** shared styled components used to compose sections */
 export {
@@ -15,4 +15,11 @@ export {
   DisplayArea,
 } from './composite-components';
 
-export { Sidebar, Landing, Button, ExternalLink, ContactForm, TechIconList };
+export {
+  Sidebar,
+  Button,
+  ExternalLink,
+  ContactForm,
+  TechIconList,
+  CircleImage,
+};

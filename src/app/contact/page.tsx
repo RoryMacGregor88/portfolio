@@ -44,11 +44,11 @@ const Contact = () => {
 
         <div className='flex flex-col gap-4 lg:gap-8 items-center'>
           <ExternalLink
-            label='Go To LinkedIn'
+            label='Go to LinkedIn'
             href='https://www.linkedin.com/in/rory-macgregor-8910aa27a/'
           />
           <Button
-            label='Copy Email to Clipboard'
+            label='Copy email to clipboard'
             onClick={() =>
               navigator.clipboard.writeText('rorymacgregordev@outlook.com')
             }

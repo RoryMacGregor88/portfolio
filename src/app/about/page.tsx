@@ -4,7 +4,10 @@ import {
   Title,
   DescriptionSection,
   DisplayArea,
+  CircleImage,
 } from '~/components';
+
+import FaceImage from '~/images/face-cropped.jpg';
 
 import { ABOUT_DATA } from '~/app/about/about-data';
 
@@ -22,7 +25,7 @@ const About = () =>
           </DescriptionSection>
         </ContentArea>
         <DisplayArea>
-          <h1>Hello</h1>
+          <CircleImage image={FaceImage} alt='asdf' />
         </DisplayArea>
       </SectionWrapper>
     );
