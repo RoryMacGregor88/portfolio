@@ -2,6 +2,8 @@
 
 import NextImage from 'next/image';
 
+import ImageViewer from 'react-simple-image-viewer';
+
 import {
   ExternalLink,
   SectionWrapper,
@@ -16,6 +18,7 @@ import { PROJECT_DATA, Project } from '~/project-data';
 
 import FaceImage from '~/images/face-cropped.jpg';
 import { TechIconList } from '~/components';
+import { useState } from 'react';
 
 const ProfilePicture = () => (
   <div
@@ -37,10 +40,10 @@ const ProfilePicture = () => (
       }}
     >
       <NextImage
-        alt={`Rory MacGregor headshot`}
+        alt='Rory MacGregor headshot'
         src={FaceImage}
-        style={{ objectFit: 'fill' }}
         placeholder='blur'
+        style={{ objectFit: 'fill' }}
       />
     </div>
   </div>
@@ -59,11 +62,9 @@ const IntroSection = () => (
           I&apos;m a 34-year-old full-stack TypeScript developer based in
           Edinburgh, Scotland. I&apos;ve been involved in software development
           for 6 years and have worked professionally for the last 4 years at an
-          aerospace firm in Edinburgh called Astrosat.
-        </p>
-        <p>
-          Astrosat specialises in visualising satellite data on maps and
-          creating custom tools with which to interact with it.
+          aerospace firm in Edinburgh called Astrosat, which specialises in
+          visualising satellite data on maps and creating custom tools with
+          which to interact with it.
         </p>
         <p>
           Scrolling down this page, you will find short descriptions of projects
@@ -76,7 +77,7 @@ const IntroSection = () => (
         </p>
       </DescriptionSection>
 
-      <TechIconList title='Principle technologies: ' showAll />
+      <TechIconList title='Principal technologies: ' showAll />
 
       <ButtonSection>
         <ExternalLink
@@ -107,12 +108,15 @@ const ProjectSection = ({
     descriptions,
     isResponsive,
     images,
-    technologies,
+    primaryTechnologies,
+    secondaryTechnologies,
     name,
     buttonMetadata,
   },
   index,
 }: ProjectSectionProps) => {
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
   const isEven = index % 2 === 0;
   return (
     <SectionWrapper isEven={isEven}>
@@ -129,7 +133,10 @@ const ProjectSection = ({
           ))}
         </DescriptionSection>
 
-        <TechIconList technologies={technologies} />
+        <TechIconList
+          primaryTechnologies={primaryTechnologies}
+          secondaryTechnologies={secondaryTechnologies}
+        />
 
         <ButtonSection>
           {buttonMetadata.map(({ label, href }) => (
@@ -139,33 +146,46 @@ const ProjectSection = ({
       </ContentArea>
 
       <DisplayArea>
-        <div className='flex flex-col gap-2 justify-evenly h-full my-2'>
-          {images.map(({ src, alt }) => (
+        <div className='flex flex-wrap flex-row justify-evenly gap-2 m-4'>
+          {images.map(({ src, alt }, i) => (
             <div
               key={alt}
-              className='border-4 border-solid border-white rounded-md overflow-hidden mx-8 lg:mx-16 my-8 lg:my-0'
+              className='flex w-2/5 border-4 border-solid border-white rounded-md overflow-hidden'
             >
               <NextImage
                 alt={name}
                 src={src}
-                style={{ objectFit: 'fill' }}
+                style={{ objectFit: 'fill', cursor: 'pointer' }}
                 placeholder='blur'
+                onClick={() => setSelectedImage(i + 1)}
               />
             </div>
           ))}
         </div>
       </DisplayArea>
+      {!!selectedImage ? (
+        <ImageViewer
+          src={images.map(({ src }) => src)}
+          currentIndex={selectedImage}
+          onClose={() => setSelectedImage(null)}
+          disableScroll={false}
+          backgroundStyle={{ backgroundColor: 'rgba(0,0,0,0.9)' }}
+          closeOnClickOutside={true}
+        />
+      ) : null}
     </SectionWrapper>
   );
 };
 
-const ProjectDisplay = () => (
-  <ul>
-    <IntroSection />
-    {PROJECT_DATA.map((project, i) => (
-      <ProjectSection key={project.name} index={i + 1} project={project} />
-    ))}
-  </ul>
-);
+const Landing = () => {
+  return (
+    <ul>
+      <IntroSection />
+      {PROJECT_DATA.map((project, i) => (
+        <ProjectSection key={project.name} project={project} index={i + 1} />
+      ))}
+    </ul>
+  );
+};
 
-export default ProjectDisplay;
+export default Landing;

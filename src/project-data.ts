@@ -15,7 +15,8 @@ export type Project = {
   name: string;
   descriptions: string[];
   images: { src: StaticImageData; alt: string }[];
-  technologies: string[];
+  primaryTechnologies: string[];
+  secondaryTechnologies: string[];
   isResponsive?: boolean;
   buttonMetadata: { label: string; href: string }[];
 };
@@ -52,7 +53,7 @@ export const PROJECT_DATA: Project[] = [
         alt: 'dashboard-5',
       },
     ],
-    technologies: [
+    primaryTechnologies: [
       'React',
       'TypeScript',
       'Redux',
@@ -61,6 +62,7 @@ export const PROJECT_DATA: Project[] = [
       'React Testing Library',
       'Material UI',
     ],
+    secondaryTechnologies: ['React Hook Form', 'Yup'],
     buttonMetadata: [
       {
         label: 'Deployment',
@@ -72,111 +74,107 @@ export const PROJECT_DATA: Project[] = [
       },
     ],
   },
+  // {
+  //   name: '2. Functional Player',
+  //   descriptions: [
+  //     `This is a long-lived training project that I've maintained for several years. It was initially created as a playground to learn more about the primaryTechnologies used as Astrosat, but quickly grew into a fully-realised production app.`,
+  //     'It has since been deployed to production and testing environments, has full authentication, authorization, server-side sessions, client-side cookies, Stripe payment processing and much more.',
+  //   ],
+  //   images: [
+  //     {
+  //       src: ChardDashboard1,
+  //       alt: 'chart-dashboard-1',
+  //     },
+  //     {
+  //       src: ChardDashboard2,
+  //       alt: 'chart-dashboard-2',
+  //     },
+  //   ],
+  //   primaryTechnologies: [
+  //     'Next.js',
+  //     'React',
+  //     'TypeScript',
+  //     'Node.js',
+  //     'Stripe',
+  //     'React Testing Library',
+  //     'Material UI',
+  //   ],
+  //   secondaryTechnologies: [],
+  //   isResponsive: true,
+  //   buttonMetadata: [
+  //     {
+  //       label: 'Deployment',
+  //       href: 'www.google.com',
+  //     },
+  //     {
+  //       label: 'Code',
+  //       href: 'www.github.com',
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: '3. React-Query Auth App',
+  //   descriptions: [],
+  //   isResponsive: true,
+  //   images: [
+  //     {
+  //       src: ChardDashboard1,
+  //       alt: 'chart-dashboard-1',
+  //     },
+  //     {
+  //       src: ChardDashboard2,
+  //       alt: 'chart-dashboard-2',
+  //     },
+  //   ],
+  //   primaryTechnologies: [],
+  //   buttonMetadata: [
+  //     {
+  //       label: 'Deployment',
+  //       href: 'www.google.com',
+  //     },
+  //     {
+  //       label: 'Code',
+  //       href: 'www.github.com',
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: '4. Deck GL Mapping App',
+  //   descriptions: [],
+  //   isResponsive: false,
+  //   images: [
+  //     {
+  //       src: ChardDashboard1,
+  //       alt: 'chart-dashboard-1',
+  //     },
+  //     {
+  //       src: ChardDashboard2,
+  //       alt: 'chart-dashboard-2',
+  //     },
+  //   ],
+  //   primaryTechnologies: [],
+  //   secondaryTechnologies: [],
+  //   buttonMetadata: [
+  //     {
+  //       label: 'Deployment',
+  //       href: 'www.google.com',
+  //     },
+  //     {
+  //       label: 'Code',
+  //       href: 'www.github.com',
+  //     },
+  //   ],
+  // },
   {
-    name: '2. Functional Player',
+    name: '5. This app!',
     descriptions: [
-      `This is a long-lived training project that I've maintained for several years. It was initially created as a playground to learn more about the technologies used as Astrosat, but quickly grew into a fully-realised production app.`,
-      'It has since been deployed to production and testing environments, has full authentication, authorization, server-side sessions, client-side cookies, Stripe payment processing and much more.',
-    ],
-    images: [
-      {
-        src: ChardDashboard1,
-        alt: 'chart-dashboard-1',
-      },
-      {
-        src: ChardDashboard2,
-        alt: 'chart-dashboard-2',
-      },
-    ],
-    technologies: [
-      'Next.js',
-      'React',
-      'TypeScript',
-      'Node.js',
-      'Stripe',
-      'React Testing Library',
-      'Material UI',
+      `This portfolio app was created completely manually using Next.js 13, TypeScript, Tailwind CSS, React Hook Form and Yup.`,
+      `I put it together fairly quickly for the purposes of hosting these demo projects, so it is not intended to be anything grand, and I'm relatively new to Tailwind CSS, so it also served as an opportunity to have a proper investigation.`,
+      `It's fully responsive as far down as 200 pixels too, so feel free to have a play around.`,
     ],
     isResponsive: true,
-    buttonMetadata: [
-      {
-        label: 'Deployment',
-        href: 'www.google.com',
-      },
-      {
-        label: 'Code',
-        href: 'www.github.com',
-      },
-    ],
-  },
-  {
-    name: '3. React-Query Auth App',
-    descriptions: [],
-    isResponsive: true,
-    images: [
-      {
-        src: ChardDashboard1,
-        alt: 'chart-dashboard-1',
-      },
-      {
-        src: ChardDashboard2,
-        alt: 'chart-dashboard-2',
-      },
-    ],
-    technologies: [],
-    buttonMetadata: [
-      {
-        label: 'Deployment',
-        href: 'www.google.com',
-      },
-      {
-        label: 'Code',
-        href: 'www.github.com',
-      },
-    ],
-  },
-  {
-    name: '4. Deck GL Mapping App',
-    descriptions: [],
-    isResponsive: false,
-    images: [
-      {
-        src: ChardDashboard1,
-        alt: 'chart-dashboard-1',
-      },
-      {
-        src: ChardDashboard2,
-        alt: 'chart-dashboard-2',
-      },
-    ],
-    technologies: [],
-    buttonMetadata: [
-      {
-        label: 'Deployment',
-        href: 'www.google.com',
-      },
-      {
-        label: 'Code',
-        href: 'www.github.com',
-      },
-    ],
-  },
-  {
-    name: '5. This site!',
-    descriptions: [
-      `This portfolio app was created completely manually using Next.js 13, Typescript, Tailwind CSS, React Hook Form and Yup.`,
-      `I'm relatively new to Tailwind, so I thought this would serve as an opportunity to have a proper investigation. It's fully responsive too, so feel free to have a play around.`,
-      `I put it together fairly quickly for the purposes of hosting demo projects, so it is not intended to be anything grand.`,
-    ],
-    isResponsive: true,
-    technologies: [
-      'Next.js 13',
-      'React',
-      'Typescript',
-      'Tailwind CSS',
-      'React Hook Form',
-      'Yup',
-    ],
+    primaryTechnologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    secondaryTechnologies: ['React Hook Form', 'Yup'],
     images: [
       {
         src: ChardDashboard1,

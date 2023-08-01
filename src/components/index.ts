@@ -1,5 +1,5 @@
 import Sidebar from './sidebar.component';
-import ProjectDisplay from './project-display.component';
+import Landing from './landing.component';
 import Button from './button/button.component';
 import ExternalLink from './external-link.component';
 import ContactForm from './contact-form/contact-form.component';
@@ -15,11 +15,4 @@ export {
   DisplayArea,
 } from './composite-components';
 
-export {
-  Sidebar,
-  ProjectDisplay,
-  Button,
-  ExternalLink,
-  ContactForm,
-  TechIconList,
-};
+export { Sidebar, Landing, Button, ExternalLink, ContactForm, TechIconList };

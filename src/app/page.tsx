@@ -1,8 +1,8 @@
-import { ProjectDisplay } from '~/components';
+import { Landing } from '~/components';
 
 const Home = () => (
   <main className='flex justify-between flex-col lg:flex-row'>
-    <ProjectDisplay />
+    <Landing />
   </main>
 );
 
