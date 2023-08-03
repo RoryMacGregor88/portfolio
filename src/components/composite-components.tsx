@@ -1,6 +1,8 @@
-import NextImage, { StaticImageData } from 'next/image';
+import NextImage from 'next/image';
 
 import { ReactNode } from 'react';
+
+import ReactPhotoAlbum, { RenderPhotoProps } from 'react-photo-album';
 
 import clsx from 'clsx';
 
@@ -29,34 +31,47 @@ export const DisplayArea = ({ children }: { children: ReactNode }) => (
   </div>
 );
 
-interface MultiImageViewProps {
-  images: { src: StaticImageData; alt: string }[];
-  setSelectedImage: (index: number) => void;
+/** from react-photo-album docs, for use with Next images */
+const NextJsImage = ({ photo, imageProps, wrapperStyle }: RenderPhotoProps) => {
+  const { alt, title, sizes, className, onClick } = imageProps;
+  return (
+    <div
+      style={{
+        ...wrapperStyle,
+        position: 'relative',
+      }}
+    >
+      <NextImage
+        fill
+        src={photo}
+        placeholder={'blurDataURL' in photo ? 'blur' : undefined}
+        alt={alt}
+        title={title}
+        sizes={sizes}
+        className={className}
+        onClick={onClick}
+      />
+    </div>
+  );
+};
+
+interface PhotoAlbumProps {
+  photos: { src: string; width: number; height: number }[];
+  onClick: (index: number) => void;
 }
 
-export const MultiImageView = ({
-  images,
-  setSelectedImage,
-}: MultiImageViewProps) => (
-  <div className='flex flex-wrap justify-evenly gap-2 m-4'>
-    {images.map(({ src, alt }, i) => (
-      <div
-        key={alt}
-        className='flex w-80 border-4 border-solid border-white rounded-md overflow-hidden'
-      >
-        <NextImage
-          alt={alt}
-          src={src}
-          style={{
-            objectFit: 'fill',
-            width: 'fit-content',
-            cursor: 'pointer',
-          }}
-          placeholder='blur'
-          onClick={() => setSelectedImage(i + 1)}
-        />
-      </div>
-    ))}
+export const PhotoAlbum = ({ photos, onClick }: PhotoAlbumProps) => (
+  <div className='w-full mx-4'>
+    <p className='text-black text-center text-lg font-bold mb-4'>
+      Click images for full screen
+    </p>
+    <ReactPhotoAlbum
+      layout='rows'
+      columns={2}
+      photos={photos}
+      renderPhoto={NextJsImage}
+      onClick={({ index }: { index: number }) => onClick(index)}
+    />
   </div>
 );
 

@@ -2,10 +2,11 @@ import { Metadata } from 'next';
 
 import { ReactNode } from 'react';
 
-import './globals.css';
 import { Open_Sans } from 'next/font/google';
 
 import { Sidebar } from '~/components';
+
+import './globals.css';
 
 const openSans = Open_Sans({ subsets: ['latin'] });
 

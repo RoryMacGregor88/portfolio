@@ -1,11 +1,11 @@
 import NextImage, { StaticImageData } from 'next/image';
 
 interface Props {
-  image: StaticImageData;
+  src: string;
   alt: string;
 }
 
-const CircleImage = ({ image, alt }: Props) => (
+const CircleImage = ({ src, alt }: Props) => (
   <div
     style={{
       display: 'flex',
@@ -16,7 +16,7 @@ const CircleImage = ({ image, alt }: Props) => (
   >
     <div
       style={{
-        border: '4px solid #fff',
+        border: '6px solid #fff',
         borderRadius: '50%',
         maxHeight: '30em',
         maxWidth: '30em',
@@ -26,8 +26,10 @@ const CircleImage = ({ image, alt }: Props) => (
     >
       <NextImage
         alt={alt}
-        src={image}
-        placeholder='blur'
+        src={src}
+        height='500'
+        width='500'
+        placeholder='empty'
         style={{ objectFit: 'fill' }}
       />
     </div>

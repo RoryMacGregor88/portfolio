@@ -1,20 +1,7 @@
-import { StaticImageData } from 'next/image';
-
-import {
-  dashboard1,
-  dashboard2,
-  dashboard3,
-  dashboard4,
-  dashboard5,
-} from '~/images';
-
-import ChardDashboard1 from '~/images/chart-dashboard.png';
-import ChardDashboard2 from '~/images/chart-dashboard-2.png';
-
 export type Project = {
   name: string;
   descriptions: string[];
-  images: { src: StaticImageData; alt: string }[];
+  images: { src: string; alt: string }[];
   primaryTechnologies: string[];
   secondaryTechnologies: string[];
   isResponsive?: boolean;
@@ -33,23 +20,23 @@ export const PROJECT_DATA: Project[] = [
     isResponsive: false,
     images: [
       {
-        src: dashboard1,
+        src: '/dashboard-1.png',
         alt: 'dashboard-1',
       },
       {
-        src: dashboard2,
+        src: '/dashboard-2.png',
         alt: 'dashboard-2',
       },
       {
-        src: dashboard3,
+        src: '/dashboard-3.png',
         alt: 'dashboard-3',
       },
       {
-        src: dashboard4,
+        src: '/dashboard-4.png',
         alt: 'dashboard-4',
       },
       {
-        src: dashboard5,
+        src: '/dashboard-5.png',
         alt: 'dashboard-5',
       },
     ],
@@ -82,11 +69,11 @@ export const PROJECT_DATA: Project[] = [
   //   ],
   //   images: [
   //     {
-  //       src: ChardDashboard1,
+  //       src: ChartDashboard1,
   //       alt: 'chart-dashboard-1',
   //     },
   //     {
-  //       src: ChardDashboard2,
+  //       src: ChartDashboard2,
   //       alt: 'chart-dashboard-2',
   //     },
   //   ],
@@ -118,11 +105,11 @@ export const PROJECT_DATA: Project[] = [
   //   isResponsive: true,
   //   images: [
   //     {
-  //       src: ChardDashboard1,
+  //       src: ChartDashboard1,
   //       alt: 'chart-dashboard-1',
   //     },
   //     {
-  //       src: ChardDashboard2,
+  //       src: ChartDashboard2,
   //       alt: 'chart-dashboard-2',
   //     },
   //   ],
@@ -144,11 +131,11 @@ export const PROJECT_DATA: Project[] = [
   //   isResponsive: false,
   //   images: [
   //     {
-  //       src: ChardDashboard1,
+  //       src: ChartDashboard1,
   //       alt: 'chart-dashboard-1',
   //     },
   //     {
-  //       src: ChardDashboard2,
+  //       src: ChartDashboard2,
   //       alt: 'chart-dashboard-2',
   //     },
   //   ],
@@ -174,15 +161,19 @@ export const PROJECT_DATA: Project[] = [
     ],
     isResponsive: true,
     primaryTechnologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-    secondaryTechnologies: ['React Hook Form', 'Yup'],
+    secondaryTechnologies: ['React Hook Form', 'Yup', 'React Photo Album'],
     images: [
       {
-        src: ChardDashboard1,
-        alt: 'chart-dashboard-1',
+        src: '/portfolio-1.png',
+        alt: 'portfolio-1',
       },
       {
-        src: ChardDashboard2,
-        alt: 'chart-dashboard-2',
+        src: '/portfolio-2.png',
+        alt: 'portfolio-2',
+      },
+      {
+        src: '/portfolio-3.png',
+        alt: 'portfolio-2',
       },
     ],
     buttonMetadata: [

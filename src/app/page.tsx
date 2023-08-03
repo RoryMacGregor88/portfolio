@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 
-import ImageViewer from 'react-simple-image-viewer';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
 
 import {
   ExternalLink,
@@ -14,12 +15,10 @@ import {
   DisplayArea,
   TechIconList,
   CircleImage,
-  MultiImageView,
+  PhotoAlbum,
 } from '~/components';
 
 import { PROJECT_DATA, Project } from '~/project-data';
-
-import FaceImage from '~/images/face-cropped.jpg';
 
 /** first black/yellow panel that is unique from the others */
 const IntroSection = () => (
@@ -64,7 +63,7 @@ const IntroSection = () => (
     </ContentArea>
 
     <DisplayArea>
-      <CircleImage image={FaceImage} alt='Rory MacGregor headshot' />
+      <CircleImage src='/face-cropped.jpg' alt='Rory MacGregor headshot' />
     </DisplayArea>
   </SectionWrapper>
 );
@@ -75,8 +74,11 @@ interface ProjectSectionProps {
 }
 
 /** black/yellow panels for project images and descriptions */
-const ProjectSection = ({
-  project: {
+const ProjectSection = ({ project, index }: ProjectSectionProps) => {
+  // const [open, setOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(-1);
+
+  const {
     descriptions,
     isResponsive,
     images,
@@ -84,12 +86,17 @@ const ProjectSection = ({
     secondaryTechnologies,
     name,
     buttonMetadata,
-  },
-  index,
-}: ProjectSectionProps) => {
-  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  } = project;
 
-  const isEven = index % 2 === 0;
+  const isEven = index % 2 === 0,
+    galleryIsOpen = selectedImageIndex >= 0;
+
+  /** approximate 16:9 aspect ratio in pixels, close enough for thumbnails */
+  const width = 499,
+    height = 280;
+
+  const slides = images.map(({ src }) => ({ src })),
+    photos = slides.map(({ src }) => ({ src, width, height }));
   return (
     <SectionWrapper isEven={isEven}>
       <ContentArea>
@@ -118,19 +125,15 @@ const ProjectSection = ({
       </ContentArea>
 
       <DisplayArea>
-        <MultiImageView images={images} setSelectedImage={setSelectedImage} />
+        <PhotoAlbum photos={photos} onClick={setSelectedImageIndex} />
       </DisplayArea>
 
-      {!!selectedImage ? (
-        <ImageViewer
-          src={images.map(({ src }) => `${src}`)}
-          currentIndex={selectedImage}
-          onClose={() => setSelectedImage(null)}
-          disableScroll={false}
-          backgroundStyle={{ backgroundColor: 'rgba(0,0,0,0.9)', zIndex: 1000 }}
-          closeOnClickOutside={true}
-        />
-      ) : null}
+      <Lightbox
+        index={selectedImageIndex}
+        slides={slides}
+        open={galleryIsOpen}
+        close={() => setSelectedImageIndex(-1)}
+      />
     </SectionWrapper>
   );
 };

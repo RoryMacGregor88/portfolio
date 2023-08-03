@@ -7,8 +7,6 @@ import {
   CircleImage,
 } from '~/components';
 
-import FaceImage from '~/images/face-cropped.jpg';
-
 import { ABOUT_DATA } from '~/app/about/about-data';
 
 const About = () =>
@@ -25,7 +23,7 @@ const About = () =>
           </DescriptionSection>
         </ContentArea>
         <DisplayArea>
-          <CircleImage image={FaceImage} alt='asdf' />
+          <CircleImage src='/face-cropped.jpg' alt='asdf' />
         </DisplayArea>
       </SectionWrapper>
     );
