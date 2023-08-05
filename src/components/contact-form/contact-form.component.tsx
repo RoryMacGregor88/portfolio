@@ -50,12 +50,14 @@ const ContactForm = ({ onSubmit, disableSubmit }: Props) => {
     },
   });
 
+  // TODO: change gap to match padding
+
   const isDisabled = !isDirty || disableSubmit || !!Object.keys(errors).length;
 
   return (
     <form
       onSubmit={handleSubmit((values) => onSubmit(values))}
-      className='flex flex-col w-full gap-4 p-4 lg:p-8 bg-black mx-4 lg:mx-8 rounded-md'
+      className='flex flex-col w-full lg:gap-4 p-4 lg:p-8 bg-black mx-4 lg:mx-8 rounded-md'
     >
       <div>
         <input

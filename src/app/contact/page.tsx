@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import {
   SectionWrapper,
@@ -15,8 +15,27 @@ import {
 
 import { FormValues } from '~/components/contact-form/contact-form.component';
 
+const successMessage = 'Your message was successfuly sent.',
+  errorMessage = `
+    An unexpected error occurred.
+    Please Try again later, or use one of the
+    alternative methods suggested.
+  `;
+
 const Contact = () => {
-  const [error, setError] = useState<{ message: string } | null>(null);
+  const [response, setResponse] = useState<{
+    isError: boolean;
+    message: string;
+  } | null>(null);
+
+  /** remove well/re-enable submit button after 5 seconds */
+  useEffect(() => {
+    if (response) {
+      setTimeout(() => setResponse(null), 5000);
+    }
+  }, [response]);
+
+  const { isError, message } = response ?? {};
 
   const onSubmit = async (formValues: FormValues) => {
     const res = await fetch('/api/contact', {
@@ -24,10 +43,17 @@ const Contact = () => {
       body: JSON.stringify(formValues),
     });
 
-    if (!res.ok) {
-      const error = (await res.json()) as { message: string };
-      setError(error);
-    }
+    const responseData = res.ok
+      ? {
+          isError: false,
+          message: successMessage,
+        }
+      : {
+          isError: true,
+          message: errorMessage,
+        };
+
+    setResponse(responseData);
   };
 
   return (
@@ -57,13 +83,17 @@ const Contact = () => {
       </ContentArea>
 
       <DisplayArea>
-        {!!error ? (
-          <div className='flex flex-col gap-4 mx-8 self-center mb-10 bg-red text-black text-2xl items-center rounded-md p-4'>
-            <h3>ERROR:</h3>
-            <p>{error?.message}</p>
+        {!!response ? (
+          <div
+            className={`flex flex-col gap-4 mx-8 self-center mb-10 ${
+              isError ? 'bg-red' : 'bg-green'
+            } text-black text-2xl text-center items-center rounded-md p-4`}
+          >
+            <h3>{isError ? 'Error:' : 'Success!'}</h3>
+            <p>{message}</p>
           </div>
         ) : null}
-        <ContactForm onSubmit={onSubmit} disableSubmit={!!error} />
+        <ContactForm onSubmit={onSubmit} disableSubmit={!!response} />
       </DisplayArea>
     </SectionWrapper>
   );

@@ -69,11 +69,11 @@ export const PROJECT_DATA: Project[] = [
   //   ],
   //   images: [
   //     {
-  //       src: ChartDashboard1,
+  //       src: '/dashboard-1.png',
   //       alt: 'chart-dashboard-1',
   //     },
   //     {
-  //       src: ChartDashboard2,
+  //       src: '/dashboard-1.png',
   //       alt: 'chart-dashboard-2',
   //     },
   //   ],
@@ -81,21 +81,23 @@ export const PROJECT_DATA: Project[] = [
   //     'Next.js',
   //     'React',
   //     'TypeScript',
+  //     'Figma',
   //     'Node.js',
+  //     'MongoDB',
   //     'Stripe',
   //     'React Testing Library',
   //     'Material UI',
   //   ],
-  //   secondaryTechnologies: [],
+  //   secondaryTechnologies: ['fetch-mock'],
   //   isResponsive: true,
   //   buttonMetadata: [
   //     {
   //       label: 'Deployment',
-  //       href: 'www.google.com',
+  //       href: 'www.functionalplayer.com',
   //     },
   //     {
   //       label: 'Code',
-  //       href: 'www.github.com',
+  //       href: 'https://github.com/RoryMacGregor88/functional-player',
   //     },
   //   ],
   // },
@@ -161,7 +163,13 @@ export const PROJECT_DATA: Project[] = [
     ],
     isResponsive: true,
     primaryTechnologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-    secondaryTechnologies: ['React Hook Form', 'Yup', 'React Photo Album'],
+    secondaryTechnologies: [
+      'React Hook Form',
+      'Yup',
+      'React Photo Album',
+      'fetch-mock',
+      'Nodemailer',
+    ],
     images: [
       {
         src: '/portfolio-1.png',

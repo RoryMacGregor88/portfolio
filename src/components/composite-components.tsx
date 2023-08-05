@@ -26,7 +26,7 @@ export const SectionWrapper = ({
 
 /** yellow panel with images */
 export const DisplayArea = ({ children }: { children: ReactNode }) => (
-  <div className='bg-yellow min-h-screen lg:w-1/2 flex justify-center items-center'>
+  <div className='bg-yellow min-h-screen lg:w-1/2 flex flex-col justify-center items-center p-4'>
     {children}
   </div>
 );
@@ -61,7 +61,7 @@ interface PhotoAlbumProps {
 }
 
 export const PhotoAlbum = ({ photos, onClick }: PhotoAlbumProps) => (
-  <div className='w-full mx-4'>
+  <div className='w-full m-4'>
     <p className='text-black text-center text-lg font-bold mb-4'>
       Click images for full screen
     </p>

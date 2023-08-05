@@ -12,40 +12,39 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    // TODO: server validation of form data
-    const { email, subject, message } = body as Body;
+    // const { email, subject, message } = body as Body;
 
-    const html = `
-        <div>
-          <h4>Contact email:</h4>
-          <br />
-          <p>${email}</p>
-          <br/>
-          <h4>Message:</h4>
-          <br />
-          <p>${message}</p>
-        </div>
-      `;
+    // const html = `
+    //     <div>
+    //       <h4>Contact email:</h4>
+    //       <br />
+    //       <p>${email}</p>
+    //       <br/>
+    //       <h4>Message:</h4>
+    //       <br />
+    //       <p>${message}</p>
+    //     </div>
+    //   `;
 
-    const hostEmail = process.env.HOST_EMAIL!,
-      password = process.env.HOST_EMAIL_PASSWORD!;
+    // const hostEmail = process.env.HOST_EMAIL!,
+    //   password = process.env.HOST_EMAIL_PASSWORD!;
 
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.outlook.com',
-      auth: {
-        user: hostEmail,
-        pass: password,
-      },
-    });
+    // const transporter = nodemailer.createTransport({
+    //   host: 'smtp.outlook.com',
+    //   auth: {
+    //     user: hostEmail,
+    //     pass: password,
+    //   },
+    // });
 
-    const data = {
-      from: hostEmail,
-      to: hostEmail,
-      subject,
-      html,
-    };
+    // const data = {
+    //   from: hostEmail,
+    //   to: hostEmail,
+    //   subject,
+    //   html,
+    // };
 
-    await transporter.sendMail(data);
+    // await transporter.sendMail(data);
 
     return NextResponse.json({ ok: true });
   } catch (error) {
