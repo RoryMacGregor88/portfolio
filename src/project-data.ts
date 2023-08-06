@@ -12,10 +12,21 @@ export const PROJECT_DATA: Project[] = [
   {
     name: '1. Data Visualisation Dashboard',
     descriptions: [
-      'This was the first full feature in Orbis that I was tasked with creating alone. Of course, the other devs at Astrosat were reviewing of my PRs, but the design choices, structure and code was left to my judgement.',
-      'The brief was large, and asked for an immense amount of functionality. The client had requested a dashboard capable of rendering charts to visualise data from their servers via various types of charts, and the ability for individual users to input their own target data that would then be overlayed as line charts on top of the histograms.',
-      'The user-inputted data also had to be tracked at all times, and persisted to the Orbis database, saving automatically whenever the user left the dashboard if changes had been made. On top of this, the client requested that the data could be exported as an Excel document at any moment, with a single button click.',
-      'The biggest challenge in this featue was the data transforming. The data we received from the client was in a fixed data shape, required that data to be tranformed to fit the data shape demanded by the charting library API. This led to the creation of many complex transformer functions.',
+      `This was a feature that I was tasked with completely alone (outside of PR reviews).
+      The client had asked for a lot of functionality, and the data shapes from their APIs
+      were fixed, which required the development of many custom transformer functions to map
+      the data to the formats demanded by Victory, the charting library I chose to use.`,
+      `Users can add their own data for 'target' values, which are then either conditionally
+      rendered as additional graphs in some charts, or used to calculate percentages from the
+      API data in others.`,
+      `User-inputted data is tracked at all times, and automatically persisted to the database
+      (mocked here) whenever the user navigates away from the dashboard or closes the tab/browser.`,
+      `Users can also export the data from the dashboard in its current state with a single button
+      click, which is saved to an Excel file, and separated by dataset into multiple pages.`,
+      `The API data here is 100% mocked, and has actually been significantly simplified. The live
+      data originally used was much more complex, and combined with the complexity of the functionality,
+      created many edge cases that needed to be addressed, meaning that heavy testing of the utility
+      and transformer functions was paramount.`,
     ],
     isResponsive: false,
     images: [
@@ -61,99 +72,104 @@ export const PROJECT_DATA: Project[] = [
       },
     ],
   },
-  // {
-  //   name: '2. Functional Player',
-  //   descriptions: [
-  //     `This is a long-lived training project that I've maintained for several years. It was initially created as a playground to learn more about the primaryTechnologies used as Astrosat, but quickly grew into a fully-realised production app.`,
-  //     'It has since been deployed to production and testing environments, has full authentication, authorization, server-side sessions, client-side cookies, Stripe payment processing and much more.',
-  //   ],
-  //   images: [
-  //     {
-  //       src: '/dashboard-1.png',
-  //       alt: 'chart-dashboard-1',
-  //     },
-  //     {
-  //       src: '/dashboard-1.png',
-  //       alt: 'chart-dashboard-2',
-  //     },
-  //   ],
-  //   primaryTechnologies: [
-  //     'Next.js',
-  //     'React',
-  //     'TypeScript',
-  //     'Figma',
-  //     'Node.js',
-  //     'MongoDB',
-  //     'Stripe',
-  //     'React Testing Library',
-  //     'Material UI',
-  //   ],
-  //   secondaryTechnologies: ['fetch-mock'],
-  //   isResponsive: true,
-  //   buttonMetadata: [
-  //     {
-  //       label: 'Deployment',
-  //       href: 'www.functionalplayer.com',
-  //     },
-  //     {
-  //       label: 'Code',
-  //       href: 'https://github.com/RoryMacGregor88/functional-player',
-  //     },
-  //   ],
-  // },
-  // {
-  //   name: '3. React-Query Auth App',
-  //   descriptions: [],
-  //   isResponsive: true,
-  //   images: [
-  //     {
-  //       src: ChartDashboard1,
-  //       alt: 'chart-dashboard-1',
-  //     },
-  //     {
-  //       src: ChartDashboard2,
-  //       alt: 'chart-dashboard-2',
-  //     },
-  //   ],
-  //   primaryTechnologies: [],
-  //   buttonMetadata: [
-  //     {
-  //       label: 'Deployment',
-  //       href: 'www.google.com',
-  //     },
-  //     {
-  //       label: 'Code',
-  //       href: 'www.github.com',
-  //     },
-  //   ],
-  // },
-  // {
-  //   name: '4. Deck GL Mapping App',
-  //   descriptions: [],
-  //   isResponsive: false,
-  //   images: [
-  //     {
-  //       src: ChartDashboard1,
-  //       alt: 'chart-dashboard-1',
-  //     },
-  //     {
-  //       src: ChartDashboard2,
-  //       alt: 'chart-dashboard-2',
-  //     },
-  //   ],
-  //   primaryTechnologies: [],
-  //   secondaryTechnologies: [],
-  //   buttonMetadata: [
-  //     {
-  //       label: 'Deployment',
-  //       href: 'www.google.com',
-  //     },
-  //     {
-  //       label: 'Code',
-  //       href: 'www.github.com',
-  //     },
-  //   ],
-  // },
+  {
+    name: '2. Functional Player',
+    descriptions: [
+      `This is a long-lived training app that I've been developing for several years. It is a fictional
+      streaming platform, although the functionality is that of an enterprise application, and it has since
+      been deployed to a production environment.`,
+      `I created it so that I could gain deeper experience in full-stack development, authentication,
+      authorization, session management, security, payment processing and deployment.`,
+      `Notable features include:
+      Full authentication, all CRUD actions, including automated session management
+      and the ability to create/maintain sessions across multiple devices.
+      Server-side token authorization and protected API routes.
+      Full payment processing with Stripe (using Stripe's testing environment).
+      Client and server-side form validation/sanitation.
+      Automated app-wide toast notifications for error/success states.
+      Automated e-mailing, custom domain, and much more. `,
+      `It is, for all intents and purposes, a real app. I am particularly proud of this project,
+      as I consider it to be an example of clean, terse, efficient and logical code, with test coverage
+      over 90%.`,
+    ],
+    images: [
+      {
+        src: '/dashboard-1.png',
+        alt: 'chart-dashboard-1',
+      },
+      {
+        src: '/dashboard-1.png',
+        alt: 'chart-dashboard-2',
+      },
+    ],
+    primaryTechnologies: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Figma',
+      'Node.js',
+      'MongoDB',
+      'Stripe',
+      'React Testing Library',
+      'Material UI',
+    ],
+    secondaryTechnologies: ['fetch-mock, node-mailer'],
+    isResponsive: true,
+    buttonMetadata: [
+      {
+        label: 'Deployment',
+        href: 'www.functionalplayer.com',
+      },
+      {
+        label: 'Code',
+        href: 'https://github.com/RoryMacGregor88/functional-player',
+      },
+    ],
+  },
+  {
+    name: '3. React-Query Auth App',
+    descriptions: [
+      `This was originally a playground app used to test an updated authentication and authorization system
+      for Astrosat's flagship application. Almost all of the functionality is under-the-hood,
+      so the UI is very basic.`,
+      `The idea was to use a two-token system to mitigate potential security vulnerabilities. The first would
+      be a "refresh token", which would last for a longer period, anywhere from a day to a week or more, while
+      the second would be an "access token", which would be an http-only cookie, and have a much shorter lifespan
+      of maybe only an hour. Should the access token expire, the refresh token would be used to generate a new one, until the refresh
+      token eventually expires, at that point forcing a logout.`,
+      `Using this system, if the access token is somehow compromised, the user will only be vulnerable for the length
+      of time before the access token expires.`,
+    ],
+    isResponsive: false,
+    images: [
+      {
+        src: '/portfolio-1.png',
+        alt: 'chart-dashboard-1',
+      },
+      {
+        src: '/portfolio-1.png',
+        alt: 'chart-dashboard-2',
+      },
+    ],
+    primaryTechnologies: [
+      'React Query',
+      'TypeScript',
+      'Node.js',
+      'MongoDB',
+      'Tailwind CSS',
+    ],
+    secondaryTechnologies: ['jwt-token'],
+    buttonMetadata: [
+      {
+        label: 'Deployment',
+        href: 'www.google.com',
+      },
+      {
+        label: 'Code',
+        href: 'www.github.com',
+      },
+    ],
+  },
   {
     name: '5. This app!',
     descriptions: [

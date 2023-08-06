@@ -13,7 +13,7 @@ const About = () =>
   ABOUT_DATA.map(({ title, descriptions }, i) => {
     const isEven = i % 2 === 0;
     return (
-      <SectionWrapper key={title} isEven={!isEven}>
+      <SectionWrapper key={title} isEven={isEven}>
         <ContentArea>
           <Title>{title}</Title>
           <DescriptionSection>

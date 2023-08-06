@@ -43,8 +43,9 @@ const IntroSection = () => (
           standalone deploys and repositories for each.
         </p>
         <p>
-          Please keep in mind that all projects shown here are currently under
-          development, and not reflective of finished applications.
+          Please keep in mind that all projects shown here &#40;including this
+          app&#41; are currently under development, and not reflective of
+          finished applications.
         </p>
       </DescriptionSection>
 

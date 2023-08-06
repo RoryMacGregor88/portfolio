@@ -18,6 +18,8 @@ import FigmaIcon from './figma-icon.svg';
 import LinuxIcon from './linux-icon.svg';
 import MongoDbIcon from './mongo-db-icon.svg';
 import psqlIcon from './psql-icon.svg';
+import ReactQueryIcon from './react-query-icon.svg';
+import StorybookIcon from './storybook-icon.svg';
 
 type IconsList = { name: string; Icon: () => ReactNode }[];
 
@@ -27,6 +29,7 @@ const allIcons: IconsList = [
   { name: 'Node.js', Icon: NodeIcon },
   { name: 'Next.js', Icon: NextIcon },
   { name: 'Redux', Icon: ReduxIcon },
+  // { name: 'React Query', Icon: ReactQueryIcon },
   { name: 'MongoDB', Icon: MongoDbIcon },
   { name: 'PostgreSQL', Icon: psqlIcon },
   { name: 'Victory', Icon: VictoryIcon },
@@ -40,6 +43,7 @@ const allIcons: IconsList = [
   { name: 'Figma', Icon: FigmaIcon },
   { name: 'Linux', Icon: LinuxIcon },
   { name: 'React Testing Library', Icon: ReactTestingLibraryIcon },
+  { name: 'Storybook', Icon: StorybookIcon },
 ];
 
 export default allIcons;

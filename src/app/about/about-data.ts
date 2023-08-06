@@ -19,19 +19,25 @@ export const ABOUT_DATA: AboutData = [
   {
     title: 'Non-Work Coding.',
     descriptions: [
-      `Outside of work, my main interest is actually software. I'm always working on some project, or have 10 MDN tabs open at any given time! I also enjoy a physical book, so over the last few years, I've cultivated a decent library of books on the subjects of everything from OOP design patterns to UX design philosophy. I consider myself very fortunate to have the opportunity to work in a field that genuinely interests me so much.`,
+      `Outside of work, my main interest is actually software. I'm always
+      working on some project, or have 10 MDN tabs open at any given time!
+      I also enjoy a physical book, so over the last few years, I've cultivated
+      a decent library of books on the subjects of everything from OOP design
+      patterns to UX design philosophy. I consider myself very fortunate to have
+      the opportunity to work in a field that genuinely interests me so much.`,
     ],
   },
   {
-    title: 'Music.',
+    title: 'Other Interests.',
     descriptions: [
-      `I've been a musician for over 20 years, mainly with electric guitars. I started playing when I was about 12, and in my 20s, worked briefly as a session musician, then a private teacher, then eventually in a successful wedding band. I still play today, but I've shifted focus more online now as opposed to in-person, as evident in the Functional Player app.`,
-    ],
-  },
-  {
-    title: 'Cycling.',
-    descriptions: [
-      `I've been a lifelong cyclist, something I picked up from my Dad. As well as for general fitness and getting about the city, I also cycle competitively, appearing in the top 100 of many Peloton online tracks. Possibly next year, I hope to undertake the famous Four Countries of Lake Constance tour of Austria, Germany, Liechtenstein and Switzerland.`,
+      `I've been a musician for over 20 years, mainly with electric and acoustic
+    guitars, but also with A cappella vocal music, and I performed for many years
+    with one of Scotland's most successful wedding bands.`,
+      `I'm a lifelong cyclist, mostly for general fitness and getting around
+      the city, but I also enjoy competitive cycling with others from around the world
+      via Peloton.`,
+      `And for the last decade or so, I've been a big fan of with "SpeedCubing", which is the pursuit
+    of solving Rubik's cubes in the fastest times possible (28 seconds PB)!`,
     ],
   },
 ];
