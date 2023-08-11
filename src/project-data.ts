@@ -1,11 +1,11 @@
 export type Project = {
   name: string;
   descriptions: string[];
-  images: { src: string; alt: string }[];
+  images?: { src: string; alt: string }[];
   primaryTechnologies: string[];
   secondaryTechnologies: string[];
   isResponsive?: boolean;
-  buttonMetadata: { label: string; href: string }[];
+  buttonMetadata?: { label: string; href: string }[];
 };
 
 export const PROJECT_DATA: Project[] = [
@@ -26,31 +26,13 @@ export const PROJECT_DATA: Project[] = [
       `The API data here is 100% mocked, and has actually been significantly simplified. The live
       data originally used was much more complex, and combined with the complexity of the functionality,
       created many edge cases that needed to be addressed, meaning that heavy testing of the utility
-      and transformer functions was paramount.`,
+      and transformer functions was critical.`,
     ],
     isResponsive: false,
-    images: [
-      {
-        src: '/dashboard-1.png',
-        alt: 'dashboard-1',
-      },
-      {
-        src: '/dashboard-2.png',
-        alt: 'dashboard-2',
-      },
-      {
-        src: '/dashboard-3.png',
-        alt: 'dashboard-3',
-      },
-      {
-        src: '/dashboard-4.png',
-        alt: 'dashboard-4',
-      },
-      {
-        src: '/dashboard-5.png',
-        alt: 'dashboard-5',
-      },
-    ],
+    images: [1, 2, 3, 4, 5].map((num) => ({
+      src: `/dashboard-${num}.png`,
+      alt: `dashboard-${num}`,
+    })),
     primaryTechnologies: [
       'React',
       'TypeScript',
@@ -92,16 +74,10 @@ export const PROJECT_DATA: Project[] = [
       as I consider it to be an example of clean, terse, efficient and logical code, with test coverage
       over 90%.`,
     ],
-    images: [
-      {
-        src: '/dashboard-1.png',
-        alt: 'chart-dashboard-1',
-      },
-      {
-        src: '/dashboard-1.png',
-        alt: 'chart-dashboard-2',
-      },
-    ],
+    images: [1, 2, 3, 4, 5, 6].map((num) => ({
+      src: `/functional-player-${num}.png`,
+      alt: `functional-player-${num}`,
+    })),
     primaryTechnologies: [
       'Next.js',
       'React',
@@ -141,16 +117,10 @@ export const PROJECT_DATA: Project[] = [
       of time before the access token expires.`,
     ],
     isResponsive: false,
-    images: [
-      {
-        src: '/portfolio-1.png',
-        alt: 'chart-dashboard-1',
-      },
-      {
-        src: '/portfolio-1.png',
-        alt: 'chart-dashboard-2',
-      },
-    ],
+    images: [1, 2, 3].map((num) => ({
+      src: `/portfolio-${num}.png`,
+      alt: `portfolio-${num}`,
+    })),
     primaryTechnologies: [
       'React Query',
       'TypeScript',
@@ -171,6 +141,54 @@ export const PROJECT_DATA: Project[] = [
     ],
   },
   {
+    name: 'Wildfire Simulation Dynamic Map Form',
+    descriptions: [
+      `This large, dynamic form was originally part of an app called SAFERS, which Astrosat,
+      and myself in particular, was tasked with developing. The app was already significantly
+      developed by the time Astrosat took over, but these large simulation forms (three total) had not
+      yet been created.`,
+      `The purpose of the form is to collect information about a hypothetical forest fire scenario,
+      which would be used to generate a simulation that could then be used to plan emergency responses.
+      The form itself is complex and dynamic, with several fields working conditionally, depending on
+      the state of other fields.`,
+      `The form is also linked to the map, which can be used to draw GeoJson features that are then
+      automatically converted into Well-Known Text format and displayed in the form. This, of course,
+      works in reverse too, where WKT can be pasted directly into the form, where it is immediately rendered
+      as GeoJson onto the map.`,
+      `This feature also required the development of several custom form validator functions, as the
+      standard Yup methods were not flexible enough to accommodate the functionality demanded.`,
+      `SAFERS was written in JavaScript, and although I am currently migrating this feature to TypeScript,
+      it may only partially complete, depending on when you are reading this.`,
+    ],
+    isResponsive: false,
+    primaryTechnologies: ['TypeScript', 'Next.js', 'React Testing Library'],
+    secondaryTechnologies: ['Formik', 'Yup', 'DeckGL', 'NebulaGL'],
+    images: [
+      {
+        src: '/wildfire-1.png',
+        alt: 'wildfire-1',
+      },
+      {
+        src: '/wildfire-2.png',
+        alt: 'wildfire-2',
+      },
+      {
+        src: '/wildfire-3.png',
+        alt: 'wildfire-3',
+      },
+    ],
+    buttonMetadata: [
+      {
+        label: 'Deployment',
+        href: 'https://wildfire-simulation.vercel.app/',
+      },
+      {
+        label: 'Code',
+        href: 'https://github.com/RoryMacGregor88/wildfire-simulation',
+      },
+    ],
+  },
+  {
     name: '5. This app!',
     descriptions: [
       `This portfolio app was created completely manually using Next.js 13, TypeScript, Tailwind CSS, React Hook Form and Yup.`,
@@ -185,30 +203,6 @@ export const PROJECT_DATA: Project[] = [
       'React Photo Album',
       'fetch-mock',
       'Nodemailer',
-    ],
-    images: [
-      {
-        src: '/portfolio-1.png',
-        alt: 'portfolio-1',
-      },
-      {
-        src: '/portfolio-2.png',
-        alt: 'portfolio-2',
-      },
-      {
-        src: '/portfolio-3.png',
-        alt: 'portfolio-2',
-      },
-    ],
-    buttonMetadata: [
-      {
-        label: 'Deployment',
-        href: 'www.google.com',
-      },
-      {
-        label: 'Code',
-        href: 'www.github.com',
-      },
     ],
   },
 ];

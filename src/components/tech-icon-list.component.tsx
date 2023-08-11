@@ -35,7 +35,7 @@ const TechIconList = ({
         </ul>
 
         {!!secondaryTechnologies.length ? (
-          <div className='mb-2'>
+          <div className='flex flex-col gap-2 mb-2'>
             <h3 className='text-white text-lg lg:text-xl text-center'>
               Secondary technologies:
             </h3>

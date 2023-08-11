@@ -20,7 +20,7 @@ const ErrorMessage = ({
   errorMessage,
 }: {
   errorMessage: string | undefined;
-}) => <p className='text-red h-4'>{errorMessage}</p>;
+}) => <p className='text-red h-4 mt-1'>{errorMessage}</p>;
 
 const sharedInputStyles = 'rounded-md p-4 text-black w-full focus:outline-none';
 
@@ -50,14 +50,12 @@ const ContactForm = ({ onSubmit, disableSubmit }: Props) => {
     },
   });
 
-  // TODO: change gap to match padding
-
   const isDisabled = !isDirty || disableSubmit || !!Object.keys(errors).length;
 
   return (
     <form
       onSubmit={handleSubmit((values) => onSubmit(values))}
-      className='flex flex-col w-full lg:gap-4 p-4 lg:p-8 bg-black mx-4 lg:mx-8 rounded-md'
+      className='flex flex-col w-full gap-4 p-4 lg:p-8 bg-black mx-4 lg:mx-8 rounded-md'
     >
       <div>
         <input

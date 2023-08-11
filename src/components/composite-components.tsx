@@ -10,6 +10,7 @@ interface SectionWrapperProps {
   isEven?: boolean;
   children: ReactNode;
 }
+
 /** container comprising black text and yellow image sections */
 export const SectionWrapper = ({
   isEven = false,

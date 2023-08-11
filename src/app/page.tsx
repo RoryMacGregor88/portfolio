@@ -30,12 +30,12 @@ const IntroSection = () => (
 
       <DescriptionSection>
         <p>
-          I&apos;m a 34-year-old full-stack TypeScript developer based in
-          Edinburgh, Scotland. I&apos;ve been involved in software development
-          for 6 years and have worked professionally for the last 4 years at an
-          aerospace firm in Edinburgh called Astrosat, which specialises in
-          visualising satellite data on maps and creating custom tools with
-          which to interact with it.
+          I&apos;m a 34-year-old full-stack React/TypeScript/Node.js developer
+          based in Edinburgh, Scotland. I&apos;ve been involved in software
+          development for 6 years and have worked professionally for the last 4
+          years at an aerospace firm in Edinburgh called Astrosat, which
+          specialises in visualising satellite data on maps and creating custom
+          tools with which to interact with it.
         </p>
         <p>
           Scrolling down this page, you will find short descriptions of projects
@@ -43,9 +43,9 @@ const IntroSection = () => (
           standalone deploys and repositories for each.
         </p>
         <p>
-          Please keep in mind that all projects shown here &#40;including this
-          app&#41; are currently under development, and not reflective of
-          finished applications.
+          Please keep in mind that all projects presented here &#40;including
+          this app&#41; are currently under heavy development, and not
+          reflective of finished applications.
         </p>
       </DescriptionSection>
 
@@ -96,8 +96,8 @@ const ProjectSection = ({ project, index }: ProjectSectionProps) => {
   const width = 499,
     height = 280;
 
-  const slides = images.map(({ src }) => ({ src })),
-    photos = slides.map(({ src }) => ({ src, width, height }));
+  const slides = images?.map(({ src }) => ({ src })),
+    photos = slides?.map(({ src }) => ({ src, width, height }));
   return (
     <SectionWrapper isEven={isEven}>
       <ContentArea>
@@ -118,23 +118,29 @@ const ProjectSection = ({ project, index }: ProjectSectionProps) => {
           secondaryTechnologies={secondaryTechnologies}
         />
 
-        <ButtonSection>
-          {buttonMetadata.map(({ label, href }) => (
-            <ExternalLink key={label} href={href} label={label} />
-          ))}
-        </ButtonSection>
+        {!!buttonMetadata ? (
+          <ButtonSection>
+            {buttonMetadata.map(({ label, href }) => (
+              <ExternalLink key={label} href={href} label={label} />
+            ))}
+          </ButtonSection>
+        ) : null}
       </ContentArea>
 
-      <DisplayArea>
-        <PhotoAlbum photos={photos} onClick={setSelectedImageIndex} />
-      </DisplayArea>
+      {!!photos && !!slides ? (
+        <>
+          <DisplayArea>
+            <PhotoAlbum photos={photos} onClick={setSelectedImageIndex} />
+          </DisplayArea>
 
-      <Lightbox
-        index={selectedImageIndex}
-        slides={slides}
-        open={galleryIsOpen}
-        close={() => setSelectedImageIndex(-1)}
-      />
+          <Lightbox
+            index={selectedImageIndex}
+            slides={slides}
+            open={galleryIsOpen}
+            close={() => setSelectedImageIndex(-1)}
+          />
+        </>
+      ) : null}
     </SectionWrapper>
   );
 };

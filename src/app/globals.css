@@ -5,7 +5,9 @@
 :root {
   --black: #121212;
   --white: #fff;
-  --yellow: #fed43a;
+  /* --yellow: #fed43a; */
+  /* --yellow: #808080; */
+  --yellow: #779ecb;
   --red: #ff3333;
   --green: #4bb543;
 }
