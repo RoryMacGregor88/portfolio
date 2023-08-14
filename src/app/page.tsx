@@ -91,7 +91,7 @@ interface ProjectSectionProps {
 }
 
 /** black/blue panels for project images and descriptions */
-export const ProjectSection = ({ project, index }: ProjectSectionProps) => {
+const ProjectSection = ({ project, index }: ProjectSectionProps) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(-1);
 
   const {
