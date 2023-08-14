@@ -5,14 +5,14 @@
 :root {
   --black: #121212;
   --white: #fff;
-  /* --yellow: #fed43a; */
-  /* --yellow: #808080; */
-  --yellow: #779ecb;
+  --yellow: #fed43a;
+  --grey: #808080;
+  --blue: #779ecb;
   --red: #ff3333;
   --green: #4bb543;
 }
 
 body {
   color: var(--white);
-  background-color: var(--yellow);
+  background-color: var(--blue);
 }

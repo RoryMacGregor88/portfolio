@@ -7,15 +7,7 @@ import CircleImage from './cirlce-image.component';
 import AutoScrollButtons from './auto-scroll-buttons.component';
 
 /** shared styled components used to compose sections */
-export {
-  SectionWrapper,
-  ContentArea,
-  Title,
-  DescriptionSection,
-  ButtonSection,
-  DisplayArea,
-  PhotoAlbum,
-} from './composite-components';
+export * from './composite-components';
 
 export {
   Sidebar,

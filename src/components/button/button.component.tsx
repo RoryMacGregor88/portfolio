@@ -24,7 +24,7 @@ const Button = ({
     onClick={onClick}
     disabled={disabled}
     className={clsx(
-      `border-solid rounded-md bg-yellow p-2 text-black text-sm lg:text-lg w-full font-bold ${
+      `border-solid rounded-md bg-blue p-2 text-black text-sm lg:text-lg w-full font-bold ${
         !disableHover && !disabled
           ? 'hover:bg-white transform active:scale-x-75 transition-transform'
           : ''

@@ -16,67 +16,82 @@ import {
   TechIconList,
   CircleImage,
   PhotoAlbum,
+  ImageHeader,
 } from '~/components';
 
 import { PROJECT_DATA, Project } from '~/project-data';
 
-/** first black/yellow panel that is unique from the others */
-const IntroSection = () => (
-  <SectionWrapper isEven={true}>
-    <ContentArea>
-      <Title className='text-2xl lg:text-4xl text-center lg:text-left'>
-        Hi, I&apos;m Rory.
-      </Title>
+/** first black/blue panel that is unique from the others */
+const IntroSection = () => {
+  const [selectedImageIndex, setSelectedImageIndex] = useState(-1);
 
-      <DescriptionSection>
-        <p>
-          I&apos;m a 34-year-old full-stack React/TypeScript/Node.js developer
-          based in Edinburgh, Scotland. I&apos;ve been involved in software
-          development for 6 years and have worked professionally for the last 4
-          years at an aerospace firm in Edinburgh called Astrosat, which
-          specialises in visualising satellite data on maps and creating custom
-          tools with which to interact with it.
-        </p>
-        <p>
-          Scrolling down this page, you will find short descriptions of projects
-          that demonstrate my knowledge and experience, as well as links to
-          standalone deploys and repositories for each.
-        </p>
-        <p>
-          Please keep in mind that all projects presented here &#40;including
-          this app&#41; are currently under heavy development, and not
-          reflective of finished applications.
-        </p>
-      </DescriptionSection>
+  const galleryIsOpen = selectedImageIndex >= 0,
+    imageData = { src: '/face-cropped.jpg', alt: 'Rory MacGregor headshot' };
 
-      <TechIconList title='Principal technologies: ' showAll />
+  return (
+    <SectionWrapper isEven={true}>
+      <ContentArea>
+        <Title className='text-2xl lg:text-4xl text-center lg:text-left'>
+          Hi, I&apos;m Rory.
+        </Title>
 
-      <ButtonSection>
-        <ExternalLink
-          href='https://www.linkedin.com/in/rory-macgregor-8910aa27a'
-          label='LinkedIn'
-        />
-        <ExternalLink
-          href='https://github.com/rorymacgregor88'
-          label='Github'
-        />
-      </ButtonSection>
-    </ContentArea>
+        <DescriptionSection>
+          <p>
+            I&apos;m a 34-year-old full-stack React/TypeScript/Node.js developer
+            based in Edinburgh, Scotland. I&apos;ve been involved in software
+            development for 6 years and have worked professionally for the last
+            4 years at an aerospace firm in Edinburgh called Astrosat, which
+            specialises in visualising satellite data on maps and creating
+            custom tools with which to interact with it.
+          </p>
+          <p>
+            Scrolling down this page, you will find short descriptions of
+            projects that demonstrate my knowledge and experience, as well as
+            links to standalone deploys and repositories for each.
+          </p>
+          <p>
+            PLEASE NOTE: All projects presented here &#40;including this
+            app&#41; are currently under active development, and not reflective
+            of finished applications.
+          </p>
+        </DescriptionSection>
 
-    <DisplayArea>
-      <CircleImage src='/face-cropped.jpg' alt='Rory MacGregor headshot' />
-    </DisplayArea>
-  </SectionWrapper>
-);
+        <TechIconList title='Principal technologies: ' showAll />
+
+        <ButtonSection>
+          <ExternalLink
+            href='https://www.linkedin.com/in/rory-macgregor-8910aa27a'
+            label='LinkedIn'
+          />
+          <ExternalLink
+            href='https://github.com/rorymacgregor88'
+            label='Github'
+          />
+        </ButtonSection>
+      </ContentArea>
+
+      <DisplayArea>
+        <CircleImage onClick={() => setSelectedImageIndex(0)} {...imageData} />
+        <ImageHeader singleImage />
+      </DisplayArea>
+
+      <Lightbox
+        index={selectedImageIndex}
+        slides={[{ src: imageData.src }]}
+        open={galleryIsOpen}
+        close={() => setSelectedImageIndex(-1)}
+      />
+    </SectionWrapper>
+  );
+};
 
 interface ProjectSectionProps {
   project: Project;
   index: number;
 }
 
-/** black/yellow panels for project images and descriptions */
-const ProjectSection = ({ project, index }: ProjectSectionProps) => {
-  // const [open, setOpen] = useState(false);
+/** black/blue panels for project images and descriptions */
+export const ProjectSection = ({ project, index }: ProjectSectionProps) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(-1);
 
   const {
@@ -103,9 +118,9 @@ const ProjectSection = ({ project, index }: ProjectSectionProps) => {
       <ContentArea>
         <Title>{name}</Title>
 
-        <h4 className='text-xl'>
+        <h2 className='text-xl'>
           Screen size: {isResponsive ? 'responsive' : 'desktop only'}
-        </h4>
+        </h2>
 
         <DescriptionSection>
           {descriptions.map((paragraph) => (
@@ -140,7 +155,13 @@ const ProjectSection = ({ project, index }: ProjectSectionProps) => {
             close={() => setSelectedImageIndex(-1)}
           />
         </>
-      ) : null}
+      ) : (
+        <DisplayArea>
+          <h1 className='text-black font-bold text-2xl text-center'>
+            More projects coming soon...
+          </h1>
+        </DisplayArea>
+      )}
     </SectionWrapper>
   );
 };

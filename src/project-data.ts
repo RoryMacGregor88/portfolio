@@ -42,7 +42,15 @@ export const PROJECT_DATA: Project[] = [
       'React Testing Library',
       'Material UI',
     ],
-    secondaryTechnologies: ['React Hook Form', 'Yup'],
+    secondaryTechnologies: [
+      'Vite',
+      'Vitest',
+      'React Hook Form',
+      'Yup',
+      'File-Saver',
+      'Numeral',
+      'Visx',
+    ],
     buttonMetadata: [
       {
         label: 'Deployment',
@@ -89,7 +97,13 @@ export const PROJECT_DATA: Project[] = [
       'React Testing Library',
       'Material UI',
     ],
-    secondaryTechnologies: ['fetch-mock, node-mailer'],
+    secondaryTechnologies: [
+      'Nodemailer',
+      'Bcrypt',
+      'Date-Fns',
+      'Iron-Session',
+      'Fetch-Mock',
+    ],
     isResponsive: true,
     buttonMetadata: [
       {
@@ -102,44 +116,44 @@ export const PROJECT_DATA: Project[] = [
       },
     ],
   },
-  {
-    name: '3. React-Query Auth App',
-    descriptions: [
-      `This was originally a playground app used to test an updated authentication and authorization system
-      for Astrosat's flagship application. Almost all of the functionality is under-the-hood,
-      so the UI is very basic.`,
-      `The idea was to use a two-token system to mitigate potential security vulnerabilities. The first would
-      be a "refresh token", which would last for a longer period, anywhere from a day to a week or more, while
-      the second would be an "access token", which would be an http-only cookie, and have a much shorter lifespan
-      of maybe only an hour. Should the access token expire, the refresh token would be used to generate a new one, until the refresh
-      token eventually expires, at that point forcing a logout.`,
-      `Using this system, if the access token is somehow compromised, the user will only be vulnerable for the length
-      of time before the access token expires.`,
-    ],
-    isResponsive: false,
-    images: [1, 2, 3].map((num) => ({
-      src: `/portfolio-${num}.png`,
-      alt: `portfolio-${num}`,
-    })),
-    primaryTechnologies: [
-      'React Query',
-      'TypeScript',
-      'Node.js',
-      'MongoDB',
-      'Tailwind CSS',
-    ],
-    secondaryTechnologies: ['jwt-token'],
-    buttonMetadata: [
-      {
-        label: 'Deployment',
-        href: 'www.google.com',
-      },
-      {
-        label: 'Code',
-        href: 'www.github.com',
-      },
-    ],
-  },
+  // {
+  //   name: '3. React-Query Auth App',
+  //   descriptions: [
+  //     `This was originally a playground app used to test an updated authentication and authorization system
+  //     for Astrosat's flagship application. Almost all of the functionality is under-the-hood,
+  //     so the UI is very basic.`,
+  //     `The idea was to use a two-token system to mitigate potential security vulnerabilities. The first would
+  //     be a "refresh token", which would last for a longer period, anywhere from a day to a week or more, while
+  //     the second would be an "access token", which would be an http-only cookie, and have a much shorter lifespan
+  //     of maybe only an hour. Should the access token expire, the refresh token would be used to generate a new one, until the refresh
+  //     token eventually expires, at that point forcing a logout.`,
+  //     `Using this system, if the access token is somehow compromised, the user will only be vulnerable for the length
+  //     of time before the access token expires.`,
+  //   ],
+  //   isResponsive: false,
+  //   images: [1, 2, 3].map((num) => ({
+  //     src: `/portfolio-${num}.png`,
+  //     alt: `portfolio-${num}`,
+  //   })),
+  //   primaryTechnologies: [
+  //     'React Query',
+  //     'TypeScript',
+  //     'Node.js',
+  //     'MongoDB',
+  //     'Tailwind CSS',
+  //   ],
+  //   secondaryTechnologies: ['jwt-token'],
+  //   buttonMetadata: [
+  //     {
+  //       label: 'Deployment',
+  //       href: 'www.google.com',
+  //     },
+  //     {
+  //       label: 'Code',
+  //       href: 'www.github.com',
+  //     },
+  //   ],
+  // },
   {
     name: 'Wildfire Simulation Dynamic Map Form',
     descriptions: [
@@ -161,22 +175,28 @@ export const PROJECT_DATA: Project[] = [
       it may only partially complete, depending on when you are reading this.`,
     ],
     isResponsive: false,
-    primaryTechnologies: ['TypeScript', 'Next.js', 'React Testing Library'],
-    secondaryTechnologies: ['Formik', 'Yup', 'DeckGL', 'NebulaGL'],
-    images: [
-      {
-        src: '/wildfire-1.png',
-        alt: 'wildfire-1',
-      },
-      {
-        src: '/wildfire-2.png',
-        alt: 'wildfire-2',
-      },
-      {
-        src: '/wildfire-3.png',
-        alt: 'wildfire-3',
-      },
+    primaryTechnologies: [
+      'TypeScript',
+      'Next.js',
+      'Redux',
+      'React Testing Library',
+      'Sass',
+      'Tailwind CSS',
     ],
+    secondaryTechnologies: [
+      'Formik',
+      'Yup',
+      'Deck.gl',
+      'Nebula.gl',
+      'Turf.js',
+      'Moment',
+      'Reactstrap',
+      'WKT',
+    ],
+    images: [1, 2, 3].map((num) => ({
+      src: `/wildfire-${num}.png`,
+      alt: `wildfire-${num}`,
+    })),
     buttonMetadata: [
       {
         label: 'Deployment',
@@ -201,8 +221,8 @@ export const PROJECT_DATA: Project[] = [
       'React Hook Form',
       'Yup',
       'React Photo Album',
-      'fetch-mock',
       'Nodemailer',
+      'Fetch-Mock',
     ],
   },
 ];

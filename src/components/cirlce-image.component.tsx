@@ -1,17 +1,20 @@
-import NextImage, { StaticImageData } from 'next/image';
+import NextImage from 'next/image';
 
 interface Props {
   src: string;
   alt: string;
+  onClick: () => void;
 }
 
-const CircleImage = ({ src, alt }: Props) => (
+const CircleImage = ({ src, alt, onClick }: Props) => (
   <div
+    onClick={onClick}
     style={{
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       padding: '0 2.5rem',
+      cursor: 'pointer',
     }}
   >
     <div

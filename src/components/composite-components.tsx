@@ -11,7 +11,7 @@ interface SectionWrapperProps {
   children: ReactNode;
 }
 
-/** container comprising black text and yellow image sections */
+/** container comprising black text and blue image sections */
 export const SectionWrapper = ({
   isEven = false,
   children,
@@ -25,9 +25,9 @@ export const SectionWrapper = ({
   </li>
 );
 
-/** yellow panel with images */
+/** blue panel with images */
 export const DisplayArea = ({ children }: { children: ReactNode }) => (
-  <div className='bg-yellow min-h-screen lg:w-1/2 flex flex-col justify-center items-center p-4'>
+  <div className='bg-blue min-h-screen lg:w-1/2 flex flex-col justify-center items-center p-4'>
     {children}
   </div>
 );
@@ -56,6 +56,12 @@ const NextJsImage = ({ photo, imageProps, wrapperStyle }: RenderPhotoProps) => {
   );
 };
 
+export const ImageHeader = ({ singleImage }: { singleImage?: boolean }) => (
+  <p className='text-black text-center text-lg font-bold my-4'>
+    {`Click image${singleImage ? '' : 's'} for full screen`}
+  </p>
+);
+
 interface PhotoAlbumProps {
   photos: { src: string; width: number; height: number }[];
   onClick: (index: number) => void;
@@ -63,9 +69,7 @@ interface PhotoAlbumProps {
 
 export const PhotoAlbum = ({ photos, onClick }: PhotoAlbumProps) => (
   <div className='w-full m-4'>
-    <p className='text-black text-center text-lg font-bold mb-4'>
-      Click images for full screen
-    </p>
+    <ImageHeader />
     <ReactPhotoAlbum
       layout='rows'
       columns={2}
@@ -89,9 +93,9 @@ interface TitleProps {
 }
 
 export const Title = ({ children, className }: TitleProps) => (
-  <h2 className={clsx('text-xl lg:text-2xl font-bold', className)}>
+  <h1 className={clsx('text-xl lg:text-2xl font-bold', className)}>
     {children}
-  </h2>
+  </h1>
 );
 
 /** paragraphs in between title and buttons */

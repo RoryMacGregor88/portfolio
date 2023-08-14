@@ -18,8 +18,8 @@ import FigmaIcon from './figma-icon.svg';
 import LinuxIcon from './linux-icon.svg';
 import MongoDbIcon from './mongo-db-icon.svg';
 import psqlIcon from './psql-icon.svg';
-import ReactQueryIcon from './react-query-icon.svg';
 import StorybookIcon from './storybook-icon.svg';
+import SassIcon from './sass-icon.svg';
 
 type IconsList = { name: string; Icon: () => ReactNode }[];
 
@@ -29,12 +29,12 @@ const allIcons: IconsList = [
   { name: 'Node.js', Icon: NodeIcon },
   { name: 'Next.js', Icon: NextIcon },
   { name: 'Redux', Icon: ReduxIcon },
-  // { name: 'React Query', Icon: ReactQueryIcon },
   { name: 'MongoDB', Icon: MongoDbIcon },
   { name: 'PostgreSQL', Icon: psqlIcon },
   { name: 'Victory', Icon: VictoryIcon },
   { name: 'Material UI', Icon: MaterialUiIcon },
   { name: 'Tailwind CSS', Icon: TailwindIcon },
+  { name: 'Sass', Icon: SassIcon },
   { name: 'MSW', Icon: MswIcon },
   { name: 'Git', Icon: GitIcon },
   { name: 'GitHub', Icon: GitHubIcon },

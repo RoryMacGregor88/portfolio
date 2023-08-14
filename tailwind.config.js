@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     colors: {
-      yellow: 'var(--yellow)',
+      blue: 'var(--blue)',
       red: 'var(--red)',
       green: 'var(--green)',
       black: 'var(--black)',
