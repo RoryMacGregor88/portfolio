@@ -38,11 +38,14 @@ const IntroSection = () => {
         <DescriptionSection>
           <p>
             I&apos;m a 34-year-old full-stack React/TypeScript/Node.js developer
-            based in Edinburgh, Scotland. I&apos;ve been involved in software
-            development for 6 years and have worked professionally for the last
-            4 years at an aerospace firm in Edinburgh called Astrosat, which
-            specialises in visualising satellite data on maps and creating
-            custom tools with which to interact with it.
+            with GIS experience, based in Edinburgh, Scotland.
+          </p>
+          <p>
+            I&apos;ve been involved in software development for 6 years and have
+            worked professionally for the last 4 years at an aerospace firm in
+            Edinburgh called Astrosat, which specialises in visualising
+            satellite data in mapping applications and creating custom tools
+            with which to interact with it.
           </p>
           <p>
             Scrolling down this page, you will find short descriptions of
@@ -157,9 +160,13 @@ const ProjectSection = ({ project, index }: ProjectSectionProps) => {
         </>
       ) : (
         <DisplayArea>
-          <h1 className='text-black font-bold text-2xl text-center'>
-            More projects coming soon...
+          <h1 className='text-black font-bold text-2xl text-center mb-2'>
+            Coming soon:
           </h1>
+          <p className='text-black font-bold text-xl text-center'>
+            Interactive vector maps with drawing tools, using Deck.gl,
+            Nebula.gl, React Map GL, Turf.js and Supercluster.
+          </p>
         </DisplayArea>
       )}
     </SectionWrapper>

@@ -108,7 +108,7 @@ export const PROJECT_DATA: Project[] = [
     buttonMetadata: [
       {
         label: 'Deployment',
-        href: 'www.functionalplayer.com',
+        href: 'https://www.functionalplayer.com',
       },
       {
         label: 'Code',
@@ -184,11 +184,12 @@ export const PROJECT_DATA: Project[] = [
       'Tailwind CSS',
     ],
     secondaryTechnologies: [
-      'Formik',
-      'Yup',
       'Deck.gl',
       'Nebula.gl',
+      'React Map GL',
       'Turf.js',
+      'Formik',
+      'Yup',
       'Moment',
       'Reactstrap',
       'WKT',
@@ -211,8 +212,9 @@ export const PROJECT_DATA: Project[] = [
   {
     name: '5. This app!',
     descriptions: [
-      `This portfolio app was created completely manually using Next.js 13, TypeScript, Tailwind CSS, React Hook Form and Yup.`,
-      `I put it together fairly quickly for the purposes of hosting these demo projects, so it is not intended to be anything grand, and I'm relatively new to Tailwind CSS, so it also served as an opportunity to have a proper investigation.`,
+      `This portfolio app was created manually using Next.js 13, TypeScript, Tailwind CSS, React Photo Album, React Hook Form and Yup.`,
+      `I put it together fairly quickly for the purposes of hosting these demo projects, so it is not intended to be anything grand.`,
+      `I'm also relatively new to Tailwind CSS, so it served as an opportunity to have a proper investigation.`,
       `It's fully responsive as far down as 250 pixels too, so feel free to have a play around.`,
     ],
     isResponsive: true,
@@ -223,6 +225,12 @@ export const PROJECT_DATA: Project[] = [
       'React Photo Album',
       'Nodemailer',
       'Fetch-Mock',
+    ],
+    buttonMetadata: [
+      {
+        label: 'Code',
+        href: 'https://github.com/RoryMacGregor88/portfolio',
+      },
     ],
   },
 ];

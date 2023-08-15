@@ -32,7 +32,10 @@ export const DisplayArea = ({ children }: { children: ReactNode }) => (
   </div>
 );
 
-/** from react-photo-album docs, for use with Next images */
+/**
+ * from react-photo-album docs, for use with Next images:
+ * https://react-photo-album.com/examples/nextjs#Next.jsImage
+ */
 const NextJsImage = ({ photo, imageProps, wrapperStyle }: RenderPhotoProps) => {
   const { alt, title, sizes, className, onClick } = imageProps;
   return (

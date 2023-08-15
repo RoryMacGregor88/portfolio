@@ -1,6 +1,7 @@
 import allIcons from '~/icons';
 
-const DEFAULT_TITLE = 'Primary technologies:';
+const DEFAULT_TITLE = 'Developed using: ',
+  GIS_TECHNOLOGIES = 'Deck.gl, Nebula.gl, React Map Gl, Turf.js';
 
 const getSelectedIcons = (technologies: string[]) =>
   allIcons.filter(({ name }) => technologies.includes(name));
@@ -34,12 +35,14 @@ const TechIconList = ({
           ))}
         </ul>
 
-        {!!secondaryTechnologies.length ? (
+        {!!secondaryTechnologies.length || showAll ? (
           <div className='flex flex-col gap-2 mb-2'>
             <h3 className='text-white text-lg lg:text-xl text-center'>
-              Secondary technologies:
+              {showAll ? 'GIS technologies' : 'Also used'}:
             </h3>
-            <p>{secondaryTechnologies.join(', ')}</p>
+            <p className='text-md lg:text-lg'>
+              {showAll ? GIS_TECHNOLOGIES : secondaryTechnologies.join(', ')}
+            </p>
           </div>
         ) : null}
       </div>
