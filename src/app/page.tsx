@@ -54,8 +54,8 @@ const IntroSection = () => {
           </p>
           <p>
             PLEASE NOTE: All projects presented here &#40;including this
-            app&#41; are currently under active development, and not reflective
-            of finished applications.
+            app&#41; are currently under active development, and therefore not
+            reflective of finished applications.
           </p>
         </DescriptionSection>
 

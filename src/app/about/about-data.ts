@@ -49,7 +49,7 @@ export const ABOUT_DATA: AboutData = [
       `I'm a lifelong cyclist, mostly for general fitness and getting around
       the city, but I also enjoy competitive cycling, both in real life and with others from around
       the world via Peloton.`,
-      `And for the last decade or so, I've been a big fan of with speed-cubing, which is the pursuit
+      `And for the last decade or so, I've been a big fan of speed-cubing, which is the pursuit
     of solving Rubik's cubes in the fastest times possible (28 seconds PB)!`,
     ],
     images: [

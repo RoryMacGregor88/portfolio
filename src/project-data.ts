@@ -19,7 +19,7 @@ export const PROJECT_DATA: Project[] = [
       `Users can add their own data for 'target' values, which are then either conditionally
       rendered as additional graphs in some charts, or used to calculate percentages from the
       API data in others.`,
-      `User-inputted data is tracked at all times, and automatically persisted to the database
+      `All user interactions are tracked at all times, and automatically persisted to the database
       (mocked here) whenever the user navigates away from the dashboard or closes the tab/browser.`,
       `Users can also export the data from the dashboard in its current state with a single button
       click, which is saved to an Excel file, and separated by dataset into multiple pages.`,
@@ -194,7 +194,7 @@ export const PROJECT_DATA: Project[] = [
       'Reactstrap',
       'WKT',
     ],
-    images: [1, 2, 3].map((num) => ({
+    images: [1, 2, 3, 4, 5, 6].map((num) => ({
       src: `/wildfire-${num}.png`,
       alt: `wildfire-${num}`,
     })),
