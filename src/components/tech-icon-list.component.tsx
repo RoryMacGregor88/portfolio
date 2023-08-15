@@ -1,7 +1,7 @@
 import allIcons from '~/icons';
 
 const DEFAULT_TITLE = 'Developed using: ',
-  GIS_TECHNOLOGIES = 'Deck.gl, Nebula.gl, React Map Gl, Turf.js';
+  GIS_TECHNOLOGIES = 'Deck.gl, Nebula.gl, React Map Gl, Turf.js, Supercluster';
 
 const getSelectedIcons = (technologies: string[]) =>
   allIcons.filter(({ name }) => technologies.includes(name));

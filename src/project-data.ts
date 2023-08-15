@@ -29,7 +29,7 @@ export const PROJECT_DATA: Project[] = [
       and transformer functions was critical.`,
     ],
     isResponsive: false,
-    images: [1, 2, 3, 4, 5].map((num) => ({
+    images: [1, 2, 3, 4, 5, 6].map((num) => ({
       src: `/dashboard-${num}.png`,
       alt: `dashboard-${num}`,
     })),
