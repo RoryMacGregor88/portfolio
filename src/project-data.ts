@@ -210,6 +210,45 @@ export const PROJECT_DATA: Project[] = [
     ],
   },
   {
+    name: 'Snake! Functional React style',
+    descriptions: [
+      `This is a re-creation of the classic Nokia game Snake II. I created this mostly as
+      an exercise in functional programming and custom React hooks, but also for fun.`,
+      `Although others have re-created Snake in the past, I intentionally shielded myself from
+      any kind of examples as a personal challenge, so the logic was been 100% created
+      by myself, with zero outside influence.`,
+      `The game includes all of the features of the original, such as: Wrapping when hitting walls
+      or floor/ceiling, the snake's body growing each time he eats a gecko, the snake getting faster
+      each time he eats a gecko, the snake's head turning to face the direction he is moving,
+      prevention of turning 180 degrees and a look-ahead hint of where the next gecko will appear.`,
+      `I included this here because I am very proud of the fact that I was able to re-create the
+      entirety of the game's logic unassisted, using what I consider to be very clean, efficient
+      and logical functional programming.`,
+    ],
+    isResponsive: false,
+    primaryTechnologies: [
+      'React',
+      'TypeScript',
+      'React Testing Library',
+      'Sass',
+    ],
+    secondaryTechnologies: ['Vite', 'Vitest', 'Date-Fns'],
+    images: [1, 2, 3, 4, 5, 6].map((num) => ({
+      src: `/snake-${num}.png`,
+      alt: `snake-${num}`,
+    })),
+    buttonMetadata: [
+      {
+        label: 'Deployment',
+        href: 'https://snake-five-peach.vercel.app/',
+      },
+      {
+        label: 'Code',
+        href: 'https://github.com/RoryMacGregor88/snake',
+      },
+    ],
+  },
+  {
     name: '5. This app!',
     descriptions: [
       `This portfolio app was created manually using Next.js 13, TypeScript, Tailwind CSS, React Photo Album, React Hook Form and Yup.`,
