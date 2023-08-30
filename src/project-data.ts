@@ -12,7 +12,7 @@ export const PROJECT_DATA: Project[] = [
   {
     name: '1. Data Visualisation Dashboard',
     descriptions: [
-      `This was a feature that I was tasked with completely alone (outside of PR reviews).
+      `This was a feature that I was tasked with completely solo (outside of PR reviews).
       The client had asked for a lot of functionality, and the data shapes from their APIs
       were fixed, which required the development of many custom transformer functions to map
       the data to the formats demanded by Victory, the charting library I chose to use.`,
@@ -213,17 +213,21 @@ export const PROJECT_DATA: Project[] = [
     name: 'Snake! Functional React style',
     descriptions: [
       `This is a re-creation of the classic Nokia game Snake II. I created this mostly as
-      an exercise in functional programming and custom React hooks, but also for fun.`,
-      `Although others have re-created Snake in the past, I intentionally shielded myself from
-      any kind of examples as a personal challenge, so the logic was been 100% created
-      by myself, with zero outside influence.`,
-      `The game includes all of the features of the original, such as: Wrapping when hitting walls
-      or floor/ceiling, the snake's body growing each time he eats a gecko, the snake getting faster
-      each time he eats a gecko, the snake's head turning to face the direction he is moving,
-      prevention of turning 180 degrees and a look-ahead hint of where the next gecko will appear.`,
+      an exercise in functional programming and custom React hooks, but also for fun, as I enjoy
+      working out complex logic such as the game mechanics here.`,
+      `Although this is not the first time someone has re-created Snake in React, the others are quite
+      simple, and I haven't come across one with as much functionality as this one. I also intentionally
+      shielded myself fromany kind of example as a personal challenge, so the game logic here is 100% my
+      own creation.`,
+      `The game includes all of the gameplay features of the original, such as: wrapping when hitting
+      walls or floor/ceiling, the snake's body growing each time he eats, the snake's head turning to
+      face the direction he is moving and prevention of turning 180 degrees.`,
+      `I also added a few additional features that I thought improved the fun, such as:
+      the snake getting faster each time he eats, a look-ahead hint of where the next lizard will appear,
+      and randomly spawning bonuses and booby traps.`,
       `I included this here because I am very proud of the fact that I was able to re-create the
-      entirety of the game's logic unassisted, using what I consider to be very clean, efficient
-      and logical functional programming.`,
+      entirety of the game's logic unassisted, as well as some new stuff, using what I consider to be
+      extremely clean, organised, and readable functional programming.`,
     ],
     isResponsive: false,
     primaryTechnologies: [
