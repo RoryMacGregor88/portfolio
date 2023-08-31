@@ -99,7 +99,6 @@ const ProjectSection = ({ project, index }: ProjectSectionProps) => {
 
   const {
     descriptions,
-    isResponsive,
     images,
     primaryTechnologies,
     secondaryTechnologies,
@@ -120,10 +119,6 @@ const ProjectSection = ({ project, index }: ProjectSectionProps) => {
     <SectionWrapper isEven={isEven}>
       <ContentArea>
         <Title>{name}</Title>
-
-        <h2 className='text-xl'>
-          Screen size: {isResponsive ? 'responsive' : 'desktop only'}
-        </h2>
 
         <DescriptionSection>
           {descriptions.map((paragraph) => (
