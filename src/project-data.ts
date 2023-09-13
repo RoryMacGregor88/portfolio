@@ -224,7 +224,7 @@ export const PROJECT_DATA: Project[] = [
       the snake getting faster each time he eats, a look-ahead hint of where the next lizard will appear,
       randomly spawning bonuses/booby traps and the snake's head icon rotating to face the direction he
       is moving.`,
-      `I included this here because it ended up being a surptisingly complex application, as well as just
+      `I included this here because it ended up being a surprisingly complex application, as well as just
       generally pretty cool, and I consider it to be an example of extremely clean, organised, maintainable,
       and readable functional programming.`,
     ],
